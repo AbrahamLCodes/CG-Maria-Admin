@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Dellates de la categor&iacute;a</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+    <section class="section1">
+      <main>
+        <p>
+          <strong>T&iacute;tulo:</strong> {{categoria.titulo}} <br>
+          <strong>Disponible:</strong> 
+          <ion-list>
+            <ion-item *ngFor="let sucursal of categoria.sucursales">
+              <ion-label>{{ sucursal.nombre }}</ion-label>
+            </ion-item>
+          </ion-list>
+          <br>
+        </p>
+        
+        <br>
+      
+        <div class="flexCont">
+          <button (click)="goTo('editarCat')">Editar Información</button>
+        </div>
+      
+        <br>
+
+      </main>
+    </section>
+
+    
+</ion-content>

@@ -1,0 +1,30 @@
+<!-- <section class="botonera" *ngIf="['/home'].indexOf(this.router.url) == -1">
+    <main>
+        <button [routerLink]="['/dashboard']" ><i class="fas fa-home"></i></button>
+        <button [routerLink]="['/users']" ><i class="fas fa-user"></i></button>
+        <button [routerLink]="['/configuraciones']" ><i class="fas fa-cog"></i></button>
+        <button [routerLink]="['/home']" ><i class="fas fa-door-open"></i></button>
+    </main>
+</section> -->
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" [translucent]="true"  mode="ios"  *ngIf="['/','/login'].indexOf(this.router.url) == -1">
+      <ion-tab-button [routerLink]="['/dashboard']" >
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Inicio</ion-label>
+        <!-- <ion-badge>6</ion-badge> -->
+      </ion-tab-button>
+  
+ 
+      <ion-tab-button (click)="opcionesRes($event,'configuraciones')">
+        <ion-icon name="settings"></ion-icon>
+        <ion-label>Configuraciones</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+        <ion-label>Cerrar sesión</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+  

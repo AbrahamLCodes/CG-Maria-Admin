@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Information</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+    <section class="section1">
+      <main>
+       <p>Detalles del producto</p>
+       <div class="flexCont">
+        <img src="../../assets/img/fondo-preguntas.jpg" width="40%" alt="">
+       </div>
+
+       <p>
+        <strong>Titulo:</strong> Titulo del producto<br>
+        <strong>Descripción:</strong> Descripción del producto<br>
+        <strong>Precio:</strong> 150.00<br>
+        <strong>Personalización:</strong> Si<br>
+        <strong>Venta solo en line:</strong> No<br>
+        <strong>Mínimo de opciones:</strong> 1<br>
+        <strong>Permitir cantidad:</strong> Si<br>
+        <strong>Disponibilidad:</strong> Suc1,Suc2,Suc3<br>
+        <strong>Marcar cómo:</strong> Popular,Picante<br>
+        <strong>Precio:</strong> 150.00<br>
+      </p>
+      <hr>
+      <p>
+        <strong>Extras</strong><br>
+        <strong>Extra 1:</strong> 20.00<br>
+        <strong>Extra 2:</strong> 10.00<br>
+        <strong>Extra 3:</strong> 5.00<br>
+      </p>
+      <hr>
+      <p>
+        <strong>Tamaños</strong><br>
+        <strong>Tam 1:</strong> 20.00<br>
+        <strong>Tam 2:</strong> 10.00<br>
+        <strong>Tam 3:</strong> 5.00<br>
+      </p>
+
+      <hr>
+      <p>
+        <strong>Opciones</strong><br>
+        <strong>Opc 1:</strong> 20.00<br>
+        <strong>Opc 2:</strong> 10.00<br>
+        <strong>Opc 3:</strong> 5.00<br>
+      </p>
+
+<br>
+        <div class="flexCont">
+          <button (click)="goTo('editar')">Editar Información</button>
+        </div>
+        <br>
+
+      </main>
+    </section>
+
+    
+</ion-content>

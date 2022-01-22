@@ -1,0 +1,35 @@
+<ion-content>
+  <section class="section1">
+    <main>
+      <div class="head">
+        <h4>
+          Monedero <br>
+          electrónico
+        </h4>
+      </div>
+     
+      <hr>
+     
+      <div class="flexCont" style="width: 100%;">
+        <input [(ngModel)]="buscador" type="search">
+      </div>
+
+      <div class="flexCont" style="width: 100%;">
+        <button  style="margin: 1%; background-color: --color-primario;" (click)="abonar()">Abonar dinero</button>
+        <button  style="margin: 1%;">Exportar registro</button> 
+      </div>
+      
+      <hr>
+
+      <div class="productos">
+        <div class="flexOpciones" *ngFor="let cliente of clientes | filter: buscador">
+          <p>{{ cliente.username }} <br> <small>Saldo: ${{cliente.monedero.toFixed(2)}}</small></p>
+          <div class="flexTablet">
+            <button class="itemTablet"  (click)="descontar(cliente)" >Descontar</button>
+          </div>
+          <button class="btnPop" (click)="opcionesRes($event, cliente)" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+        </div>
+      </div>
+    </main>
+  </section>
+</ion-content>

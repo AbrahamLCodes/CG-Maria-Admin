@@ -1,0 +1,7 @@
+<ion-content>
+  <ion-list>
+    <ion-item button [routerLink]="['/reporte-ingresos']" (click)="cerrarPop()">Reporte de ingresos</ion-item>
+    <ion-item button [routerLink]="['/reporte-pedidos']" (click)="cerrarPop()">Reporte de consultas</ion-item>
+    <ion-item lines="none" button (click)="reporteMail(); cerrarPop();">Enviar reporte</ion-item>
+  </ion-list>
+</ion-content>

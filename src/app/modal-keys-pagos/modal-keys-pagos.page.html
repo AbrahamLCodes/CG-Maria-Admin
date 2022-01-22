@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Keys de la aplicación</h5>
+      
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+    <section class="section1">
+      <main>
+
+        <form action="">
+
+          <!-- <div class="flexCont" style="margin: 10px 0px;">
+            <a href="https://www.iloveimg.com/es/recortar-imagen" target="_blank" style="text-decoration: underline;">Recortar imagen</a>
+          </div>
+           
+      <ngx-dropzone class="dropzone init" (change)="onSelect($event)">
+      <ngx-dropzone-label>Cargar imagen del producto(max 1Mb) <br> 500px X 500px </ngx-dropzone-label>
+      <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+      <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+      </ngx-dropzone-preview>
+      </ngx-dropzone> -->
+      
+      <br>
+         <hr>
+         <label for="">STRIPE</label>
+         <input type="text" placeholder="Llave privada">
+         <input type="text" placeholder="Llave pública">
+         <hr>
+    
+        
+            <button >Guardar</button>
+      
+      
+         </form>
+
+
+
+    
+      </main>
+    </section>
+
+    
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Información</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      <hr>
+      <p>Selecciona el usuario o los usuarios que recibirán la bonificación.</p>
+      <div class="flexCont" style=" margin: 20px 0px; flex-wrap: wrap; width: 100%; max-height: 15vh; overflow: auto;">
+        <ion-item *ngFor="let cliente of clientesAbonar; index as index" lines="none" class="itemUserAgre">
+          <ion-label>{{ cliente.username }}: {{ cliente.monedero.toFixed(2) }}</ion-label>
+          <ion-badge (click)="removerCliente(index, cliente)" slot="end"><ion-icon name="close"></ion-icon></ion-badge>
+        </ion-item>
+      </div>
+
+      <input [(ngModel)]="buscador" type="search" placeholder="Buscar por nombre">
+      
+      <ion-list  class="listSearchUser">
+        <ion-item *ngFor="let cliente of clientes | filter: buscador" lines="none">
+          <label for="">{{ cliente.username }}: {{ cliente.monedero.toFixed(2) }}</label>
+          <button slot="end" (click)="agregarCliente(cliente)"><ion-icon name="add"></ion-icon></button>
+        </ion-item>
+      </ion-list>
+      
+      <hr>
+
+      <label for="">Cantidad a abonar</label>
+      <input [(ngModel)]="cantidad" type="number">
+      
+      <br>
+
+      <button (click)="abonar()">Abonar</button>
+      
+      <br>
+
+    </main>
+  </section>
+</ion-content>

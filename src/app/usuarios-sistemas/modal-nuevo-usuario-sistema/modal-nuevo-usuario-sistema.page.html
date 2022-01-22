@@ -1,0 +1,87 @@
+  <ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Añadir nuevo usuario</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      <form action="" [formGroup]="usuarioForm">
+
+        <div class="flexCont" style="margin: 10px 0px;">
+          <a href="https://www.iloveimg.com/es/redimensionar-imagen" target="_blank" style="text-decoration: underline;">Recortar imagen</a>
+        </div>
+
+        <ngx-dropzone [multiple]="false" class="dropzone init" (change)="onSelect($event)">
+          <ngx-dropzone-label>Cargar una imagen de perfil(max 2mb) <br> 500px X 500px </ngx-dropzone-label>
+          <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
+            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+          </ngx-dropzone-image-preview>
+        </ngx-dropzone>
+        
+        <br>
+        
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Tipo de usuario:</ion-label>
+          <ion-select formControlName="tipo" placeholder="Seleccionar" multiple="false">
+            <ion-select-option value="ADMINISTRADOR">Administrador</ion-select-option>
+            <ion-select-option value="GERENTES">Gerente de sucursal</ion-select-option>
+            <ion-select-option value="REPARTIDOR">Repartidor</ion-select-option>
+            <ion-select-option value="CAJERO">Cajero</ion-select-option>
+            <ion-select-option value="COLABORADOR">Colaborador</ion-select-option>
+          </ion-select>
+        </ion-item> 
+
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Puede acceder a:</ion-label>
+          <ion-select formControlName="accesos" placeholder="Seleccionar" multiple="true">
+            <ion-select-option *ngFor="let acceso of accesos" value="{{acceso.id}}">{{acceso.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item> 
+
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Selecciona una subsección:</ion-label>
+          <ion-select formControlName="subaccesos" placeholder="Seleccionar" multiple="true">
+            <ion-select-option *ngFor="let subacceso of subaccesos" value="{{subacceso.id}}">{{subacceso.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item> 
+
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Asigna una sucursal:</ion-label>
+          <ion-select  formControlName="sucursal" placeholder="Seleccionar" multiple="true">
+            <ion-select-option *ngFor="let sucursal of sucursales" value="{{sucursal.id}}">{{sucursal.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item> 
+
+        <label for="">Nombre</label>
+        <input type="text" formControlName="username" placeholder="Nombre del usuario">
+
+        <label for="">Correo electrónico</label>
+        <input type="text" formControlName="email" placeholder="Con este correo ingresará el usuario al sistema">
+
+        <label for="">Contraseña</label>
+        <input type="password" (keypress)="passwordPress()" formControlName="password">
+
+        <label for="">Confirmar contraseña</label>
+        <input type="password" formControlName="confirmPassword">
+
+        <div class="flexCont">
+          <div class="item">
+            <input type="text" [(ngModel)]="generatedPassword" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="item">
+            <button (click)="generarPassword()">Generar contraseña</button>
+          </div>
+        </div>
+
+        <br>
+        
+        <button (click)="submitUsuario()">Guardar</button>
+      </form>
+    </main>
+  </section>
+</ion-content>

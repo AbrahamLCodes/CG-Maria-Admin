@@ -1,0 +1,179 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Editar producto</h5>
+      <button (click)="submitProducto()" style="font-size: 15pt; padding: 1% 4%; margin-right: 2%;">Save</button>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      <h5>Crea un nuevo producto en tu sucursal seleccionada</h5>
+      <br>
+      <div class="flexCont">
+        <button class="btnMod" (click)="modalSlideTo(0);" #modalSlide0 style="background-color:var(--color-secundario);">Detalles</button>
+        <button class="btnMod" (click)="modalSlideTo(1);" #modalSlide1>Tamaños</button>
+      </div>
+      <br>
+
+      <ion-slides pager="false" #modalSlider1 [options]="slideOpts1" (ionSlideDidChange)="modalSlideSwipe()">
+        <!-- Detalles -->
+        <ion-slide>
+          <form [formGroup]="detalleForm" action="">
+            <div class="flexCont" style="margin: 10px 0px;">
+              <a href="https://www.iloveimg.com/es/redimensionar-imagen" target="_blank" style="text-decoration: underline;">Recortar imagen</a>
+            </div>
+            <!-- in app.component.html -->
+            <ngx-dropzone [multiple]="false" class="dropzone init" (change)="onSelect($event)">
+              <ngx-dropzone-label>Cargar imagen del producto(max 2mb) <br> 500px X 500px </ngx-dropzone-label>
+              <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
+                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+              </ngx-dropzone-image-preview>
+            </ngx-dropzone>
+
+            <br>
+            <label for="">T&iacute;tulo</label>
+            <input formControlName="titulo" type="text">
+
+            <label for="">Descripción</label>
+            <textarea formControlName="descripcion" name="" id="" cols="30" rows="10" style="border-radius: 10px;"></textarea>
+
+            <label for="">Precio</label>
+            <input formControlName="precio" type="number">
+
+            <p>
+              <small>
+                Puedes activar o desactivar la personalización del producto,
+                si se desactiva el cliente no podrá especificar lo que desea quitarle al producto.
+              </small>
+            </p>
+            <!-- <ion-list color="none">
+              <ion-item class="itemIon" lines="none">
+                <label for="">Personalization</label>
+              <ion-checkbox formControlName="personalizable" slot="end" checked></ion-checkbox>
+              </ion-item>
+            </ion-list> -->
+
+            <ion-list color="none">
+              <ion-item class="itemIon" lines="none">
+                <label for="">Exclusivo venta en linea</label>
+                <ion-checkbox formControlName="soloEnComedor" slot="end"></ion-checkbox>
+              </ion-item>
+            </ion-list>
+        
+            <hr>
+
+            <ion-item lines="none" color="black" class="select">
+              <ion-label>Disponible en:</ion-label>
+              <ion-select multiple="true" formControlName="sucursales" placeholder="Branch">
+                <ion-select-option *ngFor="let sucursal of sucursales" value="{{sucursal.id}}">{{sucursal.nombre}}</ion-select-option>
+              </ion-select>
+            </ion-item> 
+            
+            <hr>
+            
+            <p><small>Marcar cómo:</small></p>
+            <ion-list color="none">
+              <ion-item class="itemIon" lines="none">
+                <label for="">Sugerido</label>
+                <ion-checkbox formControlName="recomendado" [checked]="product.recomendado" slot="end"></ion-checkbox>
+              </ion-item>
+              <ion-item class="itemIon" lines="none">
+                <label for="">Promoci&oacute;n</label>
+                <ion-checkbox formControlName="promocion" [checked]="product.promocion" slot="end"></ion-checkbox>
+              </ion-item>
+              <ion-item class="itemIon" lines="none">
+                <label for="">Popular</label>
+                <ion-checkbox formControlName="popular" [checked]="product.popular"  slot="end"></ion-checkbox>
+              </ion-item>
+              <ion-item class="itemIon" lines="none">
+                <label for="">Nuevo</label>
+                <ion-checkbox formControlName="nuevo" [checked]="product.nuevo" slot="end"></ion-checkbox>
+              </ion-item>
+              <ion-item class="itemIon" lines="none">
+                <label for="">Vegano</label>
+                <ion-checkbox formControlName="vegano" [checked]="product.vegano" slot="end"></ion-checkbox>
+              </ion-item>
+            </ion-list>
+            <hr>
+
+            <p><small>Categorias:</small></p>
+            <ion-item lines="none" color="black" class="select">
+              <ion-select multiple="true" formControlName="categorias" formControlName="categorias" placeholder="Choose">
+                <ion-select-option *ngFor="let categoria of categorias" value="{{categoria.id}}">{{categoria.titulo}}</ion-select-option>
+              </ion-select>
+            </ion-item> 
+            <hr>
+
+            <p>
+              <small>Puede agregar un complemento extra al producto, si el complemento tiene un
+                El costo adicional aumentará el costo del producto en el momento de la compra.
+              </small>
+            </p>
+
+            <ion-list>
+              <ion-item lines="none" color="black" class="select">
+                <ion-label>Agregar un extra:</ion-label>
+                <ion-select formControlName="tipos" multiple="true" placeholder="Seleccionar">
+                  <ion-select-option *ngFor="let complemento of complementos" value="{{complemento.id}}">{{complemento.title}}</ion-select-option>
+                </ion-select>
+              </ion-item>      
+            </ion-list>
+
+            <ion-list>
+              <ion-item lines="none" color="black" class="select" *ngFor="let tipo of product.tipos">
+              </ion-item>      
+            </ion-list>
+
+            <!-- <ion-list color="none">
+              <ion-item class="itemIon" lines="true" *ngFor="let opcion of ">
+                <label for="">Extra agregado 1</label>
+                <ion-icon slot="end" name="trash-outline"></ion-icon>
+              </ion-item>
+            </ion-list> -->
+
+          </form>
+        </ion-slide>
+        <!-- Detalles -->
+
+        <!-- Tamaños -->
+        <ion-slide>
+          <form [formGroup]="sizeForm" action="">
+          
+            <p>
+              Aquí es donde personalizas los tamaños de tus artículos. Añade un nombre y un precio para cada talla.
+              Si no desea tener ningún tamaño, deje todos los campos vacíos.
+            </p>
+
+            <br> 
+            <label for="">Nombre</label>
+            <input formControlName="nombre" type="text">
+            
+            <label for="">Precio</label>
+            <input formControlName="precio" type="number">
+            
+            <br>
+            
+            <button (click)="agregarSize()">Agregar tamaño</button>
+            <hr>
+
+            <ion-list color="none" style="min-height: 100px; margin-bottom: 50px;">
+              <ion-item *ngFor="let size of sizes ; let index = index" class="itemIon" lines="true">
+                <label for="">{{ size.nombre }}</label>
+                <ion-icon slot="end" name="trash-outline" (click)="eraseSize(index)"></ion-icon>
+              </ion-item>
+            </ion-list>
+          </form>
+        </ion-slide>
+        <!-- Tamaños -->
+
+        <!-- Opciones -->
+
+        <!-- Opciones -->
+      </ion-slides>
+    </main>
+  </section>
+</ion-content>

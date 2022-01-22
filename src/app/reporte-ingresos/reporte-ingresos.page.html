@@ -1,0 +1,164 @@
+<ion-content>
+  <section class="section1">
+    <main>
+      <div class="head">
+        <h2>Reporte <br> de ingresos</h2>
+        <hr>
+        
+      </div>
+     
+
+      <div class="flexChart">
+
+        <div class="itemChart">
+
+          <br>
+          <div class="flexCont" style="width: 70%;  margin: 0 auto;">
+            <div class="item" style="display: block; text-align: center;">
+              <p>De</p>
+              <input type="date">
+            </div>
+            <div class="item" style="display: block; text-align: center;">
+              <p>A</p>
+              <input type="date">
+            </div>
+          </div>
+          <button>Exportar datos</button>
+          <br>
+            <canvas baseChart class="chartCus"
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [legend]="lineChartLegend" 
+            [chartType]="'line'"
+            [plugins]="lineChartPlugins"
+            [options]="lineChartOptions">
+            </canvas>
+    
+        </div>
+        <div class="itemInfo">
+         <br>
+         <br>
+         <br>
+          <div class="flexCont" style="width: 70%;  margin: 0 auto;">
+            <div class="item" style="display: block; text-align: center;">
+              <p>De</p>
+              <input type="date">
+            </div>
+            <div class="item" style="display: block; text-align: center;">
+              <p>A</p>
+              <input type="date">
+            </div>
+          </div>
+          <button>Exportar datos</button>
+     <div class="productos">
+            <div class="flexOpciones">
+              <p>Dulce Aguirre</p>
+              <div class=" flexTablet">
+              
+                <button class="itemTablet"  (click)="modal('ver')" >Ver</button>
+              </div>
+             
+              <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+            </div>
+
+            <div class="flexOpciones">
+              <p>Alan Zucaritas</p>
+              <div class=" flexTablet">
+                <button class="itemTablet"  (click)="modal('ver')" >Ver</button>
+              </div>
+             
+              <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+            </div>
+
+            <div class="flexOpciones">
+              <p>Alan Zucaritas</p>
+              <div class=" flexTablet">
+                <button class="itemTablet"  (click)="modal('ver')" >Ver</button>
+              </div>
+             
+              <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+            </div>
+
+            <div class="flexOpciones">
+              <p>Alan Zucaritas</p>
+              <div class=" flexTablet">
+                <button class="itemTablet"  (click)="modal('ver')" >Ver</button>
+              </div>
+             
+              <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+            </div>
+
+            <div class="flexOpciones">
+              <p>Alan Zucaritas</p>
+              <div class=" flexTablet">
+                <button class="itemTablet"  (click)="modal('ver')" >Ver</button>
+              </div>
+             
+              <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+            </div>
+
+            <div class="flexOpciones">
+              <p>Alan Zucaritas</p>
+              <div class=" flexTablet">
+                <button class="itemTablet"  (click)="modal('ver')" >Ver</button>
+              </div>
+             
+              <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+            </div>
+
+            <div class="flexOpciones">
+              <p>Alan Zucaritas</p>
+              <div class=" flexTablet">
+                <button class="itemTablet"  (click)="modal('ver')" >Ver</button>
+              </div>
+             
+              <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+            </div>
+
+            <div class="flexOpciones">
+              <p>Alan Zucaritas</p>
+              <div class=" flexTablet">
+                <button class="itemTablet"  (click)="modal('ver')" >Ver</button>
+              </div>
+             
+              <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+            </div>
+
+            <div class="flexOpciones">
+              <p>Alan Zucaritas</p>
+              <div class=" flexTablet">
+                <button class="itemTablet"  (click)="modal('ver')" >Ver</button>
+              </div>
+             
+              <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+            </div>
+
+            <div class="flexOpciones">
+              <p>Alan Zucaritas</p>
+              <div class=" flexTablet">
+                <button class="itemTablet"  (click)="modal('ver')" >Ver</button>
+              </div>
+             
+              <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+            </div>
+
+            <div class="flexOpciones">
+              <p>Alan Zucaritas</p>
+              <div class=" flexTablet">
+                <button class="itemTablet"  (click)="modal('ver')" >Ver</button>
+              </div>
+             
+              <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+            </div>
+            
+          </div>
+          
+        </div>
+
+      </div>
+ 
+
+
+    </main>
+  </section>
+</ion-content>

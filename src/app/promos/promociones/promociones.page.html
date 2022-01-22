@@ -1,0 +1,34 @@
+<ion-content>
+  <section class="section1">
+    <main>
+
+      <div class="head">   
+        <h4>Promociones</h4>
+      </div>
+     
+      <hr>
+      
+      <input [(ngModel)]="buscador" type="text" placeholder="Buscar...">
+
+      <div class="flexCont" style="width: 100%;">
+        <button  style="margin: 1%; background-color: --color-primario;" (click)="nuevo()">Registrar promoción</button>
+      </div>
+      
+      <hr>
+
+      <div class="productos">
+        
+        <div *ngFor="let promocion of promociones | filter: buscador" class="flexOpciones">
+          <p>{{ promocion.identificador }}</p>
+          <div class=" flexTablet">
+            <button class="itemTablet"  (click)="borrar(promocion)" >Borrar</button>
+            <button class="itemTablet"  (click)="editar(promocion)" >Editar</button>
+            <button class="itemTablet"  (click)="ver(promocion)" style="background-color: --color-primario;">Ver</button>
+          </div>
+          <button class="btnPop" (click)="opcionesRes($event,'opcionesItem', promocion)" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+        </div>
+
+      </div>
+    </main>
+  </section>
+</ion-content>

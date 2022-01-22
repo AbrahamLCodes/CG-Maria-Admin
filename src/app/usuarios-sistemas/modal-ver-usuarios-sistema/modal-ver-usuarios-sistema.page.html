@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Información del usuario</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      <div class="flexCont">
+        <img *ngIf="usuarioInfo"
+          [src]="getImagen()" 
+          alt="foto de usuario" 
+          width="40%" >
+      </div>
+      <p>
+        <strong>Usuario:</strong> {{usuario.email}}<br>
+        <strong>Tipo de usuario:</strong> {{usuario.tipo}}<br>
+        <strong>Puede acceder a:</strong> <p *ngFor="let acceso of usuario.accesos">{{acceso.nombre}}</p><br>
+        <strong>Subsección:</strong><p *ngFor="let subseccion of usuario.subaccesos">{{subseccion.nombre}}</p><br>
+        <br>
+        <div class="flexCont">
+          <button (click)="goTo('editar')">Editar Información</button>
+        </div>
+        <br>
+    </main>
+  </section>
+</ion-content>

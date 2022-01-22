@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Enviar reportes</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+    <section class="section1">
+      <main>
+       <h5>Selecciona los <br> datos a exportar</h5>
+       <div class="flexCont">
+         <div class="item" style="display: block; text-align: center;">
+           <p>De</p>
+           <input type="date">
+         </div>
+         <div class="item" style="display: block; text-align: center;">
+          <p>A</p>
+          <input type="date">
+        </div>
+       </div>
+       <form action="">
+         <ion-list color="none">
+         <ion-item class="itemIon" lines="none">
+           <label for="">Reporte de ingresos</label>
+          <ion-checkbox slot="end"></ion-checkbox>
+         </ion-item>
+         <ion-item class="itemIon" lines="none" lines="none">
+          <label for="">Reporte de pedidos</label>
+          <ion-checkbox slot="end"></ion-checkbox>
+         </ion-item>
+         </ion-list>
+         <hr>
+         <label for="">Correo electrónico</label>
+        <input type="text">
+        <div class="flexCont">
+          <button>Enviar</button>
+        </div>
+        
+       </form>
+      </main>
+    </section>
+
+    
+</ion-content>

@@ -1,0 +1,122 @@
+<ion-content>
+  <section class="section1">
+    <main>
+      <div class="head">
+        <h4>Menú y categorias</h4>
+          <div class="flexCont">
+            <button class="btnMod" (click)="slideTo(0);" #slide0 style="background-color: var(--color-secundario);">Menú </button>
+            <button class="btnMod" (click)="slideTo(1);" #slide1>Categoría</button>
+            <button class="btnMod" (click)="slideTo(2);" #slide2>Opcionales</button>
+          </div>
+        </div>
+ 
+      <hr>
+
+      <ion-slides pager="false" #slider [options]="slideOpts" (ionSlideDidChange)="slideSwipe()">
+        <ion-slide>
+          <ion-list>
+            
+            <br>
+            <!-- <button class="itemTablet btnTablet"  >Export records</button>    -->
+          </ion-list>
+
+          <input [(ngModel)]="buscador" type="search" placeholder="Buscar..."> 
+          
+          <div class="flexOpciones">
+            <p>Opciones</p>
+            <div class="flexCont flexTablet">
+              <button class="itemTablet btnTablet" (click)="modal('nuevo')" >Cargar nuevo</button>
+              <!-- <button class="itemTablet btnTablet" (click)="modal('carta')" >Load menu</button>
+              <button class="itemTablet btnTablet" (click)="modal('csv')" >Load .CSV</button> -->
+            </div>
+          
+            <button class="btnPop" (click)="opcionesRes($event,'opcionesCarga')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+          </div>
+          <hr>
+          <div class="productos">
+            <div class="flexOpciones" *ngFor="let producto of productos | filter: buscador">
+              <p>{{ producto.titulo }}</p>
+              <div class="flexTablet">
+                <!-- <ion-toggle checked></ion-toggle> -->
+                <button class="itemTablet"  (click)="borrarProducto(producto.id)" >Borrar</button>
+                <button class="itemTablet"  (click)="editarProducto(producto.id)" >Editar</button>
+                <!-- <button class="itemTablet"  (click)="verProducto(producto.id)" style="background-color: #a8131381;">Show</button> -->
+              </div>
+            
+              <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+            </div>
+          </div>
+      </ion-slide>
+      <!-- menu -->
+
+      <!-- categorias -->
+      <ion-slide>
+        <ion-list> 
+          <br>
+          <!-- <button class="itemTablet btnTablet">Export record</button>       -->
+        </ion-list>
+
+        <input [(ngModel)]="buscadorCategorias" type="search" placeholder="Buscar...">    
+        <div class="flexOpciones">
+          <p>Opciones</p>
+          <div class="flexCont flexTablet">
+            <button class="itemTablet btnTablet" (click)="modal('nuevoCat')" >Cargar nuevo</button>
+            <!-- <button class="itemTablet btnTablet" (click)="modal('csv')" >Load .CSV</button> -->
+          </div>
+        
+          <button class="btnPop" (click)="opcionesRes($event,'opcCategoria')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+        </div>
+        
+        <hr>
+
+        <div class="productos">
+          <div class="flexOpciones" *ngFor="let categoria of categorias | filter: buscadorCategorias">
+            <p>{{categoria.titulo}}</p>
+            <div class=" flexTablet">
+              <button class="itemTablet" (click)="borrarCategoria(categoria.id)">Borrar</button>
+              <button class="itemTablet" (click)="editarCategoria(categoria.id)">Editar</button>
+              <button class="itemTablet" (click)="verCategoria(categoria.id)" style="background-color: --color-primario;">Ver</button>
+            </div>
+          
+            <button class="btnPop" (click)="opcionesRes($event,'opcionesCat')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+          </div>
+        </div>
+      </ion-slide>
+      <!-- categorias -->
+
+     
+        <!-- complementos -->
+        <ion-slide>
+          <ion-list>   
+            <br>
+            <!-- <button class="itemTablet btnTablet" >Export record</button>        -->
+          </ion-list>
+          <input [(ngModel)]="buscadorOpcionales" type="search" placeholder="Buscar..."> 
+          <div class="flexOpciones">
+            <p>Opciones</p>
+            <div class="flexCont flexTablet">
+            <button class="itemTablet btnTablet" (click)="modal('nuevoCom')">Cargar nuevo</button>
+            <!-- <button class="itemTablet btnTablet" (click)="modal('csv')" >Load .CSV</button> -->
+            </div>
+            
+            <button class="btnPop" (click)="opcionesRes($event,'opcionesComplementos')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+          </div>
+          <hr>
+    
+          <div class="productos">
+            <div class="flexOpciones" *ngFor="let complemento of complementos | filter: buscadorOpcionales">
+              <p>{{complemento.title}}</p>
+              <div class=" flexTablet">
+                <button class="itemTablet"  (click)="borrarComplemento(complemento.id)">Borrar</button>
+                <button class="itemTablet"  (click)="updateComplemento(complemento.id)">Editar</button>
+                <button class="itemTablet"  (click)="verComplemento(complemento.id)" style="background-color: --color-primario;">Ver</button>
+              </div>
+              <button class="btnPop" (click)="opcionesRes($event,'opcionesCom')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+            </div>
+          </div>
+        </ion-slide>
+        <!-- complementos -->
+      </ion-slides>
+    </main>
+  </section>
+</ion-content>

@@ -1,0 +1,255 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Editar notificación push</h5>
+
+      <button (click)="cerrarModal()">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+
+      <form action="">
+
+        <div class="flexCont" style="margin: 10px 0px;">
+          <a href="https://www.iloveimg.com/es/recortar-imagen" target="_blank"
+            style="text-decoration: underline;">Recortar imagen</a>
+        </div>
+
+        <ngx-dropzone class="dropzone init" (change)="onSelect($event)">
+          <ngx-dropzone-label>Cargar imagen (max 1Mb) <br> 500px X 300px </ngx-dropzone-label>
+          <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+          </ngx-dropzone-preview>
+        </ngx-dropzone>
+
+        <hr>
+        <p>Selecciona el usuario o los usuarios que recibirán la notificación.</p>
+        <div class="flexCont"
+          style=" margin: 20px 0px; flex-wrap: wrap; width: 100%; max-height: 15vh; overflow: auto;">
+          <ion-item lines="none" class="itemUserAgre">
+            <ion-label>Dulce Aguirre</ion-label>
+            <ion-badge slot="end">
+              <ion-icon name="close"></ion-icon>
+            </ion-badge>
+          </ion-item>
+
+          <ion-item lines="none" class="itemUserAgre">
+            <ion-label>Dulce Aguirre</ion-label>
+            <ion-badge slot="end">
+              <ion-icon name="close"></ion-icon>
+            </ion-badge>
+          </ion-item>
+
+          <ion-item lines="none" class="itemUserAgre">
+            <ion-label>Dulce Aguirre</ion-label>
+            <ion-badge slot="end">
+              <ion-icon name="close"></ion-icon>
+            </ion-badge>
+          </ion-item>
+
+          <ion-item lines="none" class="itemUserAgre">
+            <ion-label>Dulce Aguirre</ion-label>
+            <ion-badge slot="end">
+              <ion-icon name="close"></ion-icon>
+            </ion-badge>
+          </ion-item>
+
+          <ion-item lines="none" class="itemUserAgre">
+            <ion-label>Dulce Aguirre</ion-label>
+            <ion-badge slot="end">
+              <ion-icon name="close"></ion-icon>
+            </ion-badge>
+          </ion-item>
+
+          <ion-item lines="none" class="itemUserAgre">
+            <ion-label>Dulce Aguirre</ion-label>
+            <ion-badge slot="end">
+              <ion-icon name="close"></ion-icon>
+            </ion-badge>
+          </ion-item>
+        </div>
+        <input type="search" placeholder="Buscar por nombre">
+
+        <ion-list class="listSearchUser">
+
+          <ion-item lines="none">
+            <label for="">Dulce Aguirre</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+          <ion-item lines="none">
+            <label for="">Alan Zatarain</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+          <ion-item lines="none">
+            <label for="">Edgar Ibarra</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+          <ion-item lines="none">
+            <label for="">Dulce Aguirre</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+          <ion-item lines="none">
+            <label for="">Alan Zatarain</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+          <ion-item lines="none">
+            <label for="">Edgar Ibarra</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+          <ion-item lines="none">
+            <label for="">Dulce Aguirre</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+          <ion-item lines="none">
+            <label for="">Alan Zatarain</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+          <ion-item lines="none">
+            <label for="">Edgar Ibarra</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+          <ion-item lines="none">
+            <label for="">Dulce Aguirre</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+          <ion-item lines="none">
+            <label for="">Alan Zatarain</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+          <ion-item lines="none">
+            <label for="">Edgar Ibarra</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+          <ion-item lines="none">
+            <label for="">Dulce Aguirre</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+          <ion-item lines="none">
+            <label for="">Alan Zatarain</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+          <ion-item lines="none">
+            <label for="">Edgar Ibarra</label>
+            <button slot="end">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+
+        </ion-list>
+        <hr>
+        <label for="">T&iacute;tulo del mensaje</label>
+        <input type="text">
+
+        <label for="">Texto del mensaje</label>
+        <textarea name="" id="" cols="30" rows="10" style="border-radius: 10px;"></textarea>
+        <p><small>2048 Caracteres disponibles</small></p>
+        <hr>
+        <p>Público objetivo</p>
+        <p><small>Enviar notificación a usuarios:</small></p>
+        <ion-list color="none">
+          <ion-item class="itemIon" lines="none">
+            <label for="">Android</label>
+            <ion-checkbox slot="end"></ion-checkbox>
+          </ion-item>
+          <ion-item class="itemIon" lines="none">
+            <label for="">IOS</label>
+            <ion-checkbox slot="end"></ion-checkbox>
+          </ion-item>
+          <ion-item class="itemIon" lines="none">
+            <label for="">PWA / Escritorio y Laptop</label>
+            <ion-checkbox slot="end"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+        <!-- <ion-item lines="none" color="black" class="select">
+              <ion-label>Disponibilidan en:</ion-label>
+              <ion-select placeholder="Sucursal">
+                <ion-select-option value="f">Sucursal 1</ion-select-option>
+                <ion-select-option value="m">Sucursal 2</ion-select-option>
+                <ion-select-option value="d">Sucursal 3</ion-select-option>
+                <ion-select-option value="k">Sucursal 4</ion-select-option>
+              </ion-select>
+            </ion-item>  -->
+        <hr>
+        <ion-list color="none">
+          <ion-item class="itemIon" lines="none">
+            <label for="">Programar</label>
+            <ion-checkbox slot="end"></ion-checkbox>
+          </ion-item>
+          <p><small>Selecciona la fecha</small></p>
+          <input type="date">
+          <ion-item class="itemIon" lines="none">
+            <label for="">Repetir cada Año</label>
+            <ion-checkbox slot="end"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+        <hr>
+        <p><small>También puedes repetirlos dependiendo el día de la semana</small></p>
+
+
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Repetir por día:</ion-label>
+          <ion-select placeholder="Cada" multiple="true">
+            <ion-select-option value="f">Lunes</ion-select-option>
+            <ion-select-option value="m">Martes</ion-select-option>
+            <ion-select-option value="d">Miercoles</ion-select-option>
+            <ion-select-option value="k">Jueves</ion-select-option>
+            <ion-select-option value="kw">Viernes</ion-select-option>
+            <ion-select-option value="kf">Sábado</ion-select-option>
+            <ion-select-option value="ds">Domingo</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <p><small>Selecciona la hora</small></p>
+        <input type="time">
+        <button>Editar</button>
+      </form>
+    </main>
+  </section>
+</ion-content>

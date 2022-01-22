@@ -1,0 +1,468 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .section1 {
+    width: 100%;
+  }
+
+  .section1 main {
+    width: 90%;
+    margin: 20px 5% 0px;
+  }
+
+  .section1 main .head button {
+    margin: inherit;
+    margin-left: auto;
+  }
+
+
+  .section1 main .flexConte {
+    width: 100%;
+    height: 35%;
+    padding: 10px;
+    margin-left: 2%;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+}
+
+
+.section1 main .head .flexConte .btnMod {
+  width: 50% !important;
+  height: 40px !important;
+  margin-left: 5%;
+  font-size: 10pt !important;
+}
+
+  .section1 main .head .flexCont {
+    margin: 5% 0%;
+  }
+
+  .section1 main .head .flexCont .btnMod {
+    padding: 3% 5%;
+    margin: auto;
+  }
+
+  .section1 main .contPedidos {
+    width: 100%;
+  }
+
+  .section1 main .contPedidos .itemPedido {
+    width: 95%;
+    margin: 2%;
+    padding: 7% 0%;
+    border-bottom: 1px solid #c1c1c1;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px --color-primario;
+    background-color: var(--color-primario);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  .section1 main .contPedidos .itemPedido .nombre {
+    text-align: center;
+    height: auto;
+    padding: 2%;
+    width: 100%;
+    background-color: var(--color-primario);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-radius: 50px;
+  }
+
+  .section1 main .contPedidos .itemPedido ol {
+    width: 100%;
+    margin: 5% 0%;
+  }
+
+  .section1 main .contPedidos .itemPedido ol li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section1 main .contPedidos .itemPedido ol li .right {
+    margin-left: auto;
+  }
+
+  .section1 main .contPedidos .itemPedido .orden {
+    background-color: var(--ion-color-dark-shade-sec);
+  }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .section1 {
+    width: 100%;
+  }
+
+  .section1 main {
+    width: 90%;
+    margin: 30px 5%;
+  }
+
+  .section1 main .head button {
+    margin: inherit;
+    margin-left: auto;
+  }
+
+ 
+  .section1 main .flexConte {
+    width: 100%;
+    height: 45%;
+    padding: 5px;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+}
+
+
+.section1 main .head .flexConte .btnMod {
+  width: 50% !important;
+  height: 40px !important;
+  margin-left: 3%;
+  font-size: 10pt !important;
+}
+
+  .section1 main .head .flexCont {
+    margin: 5% 0%;
+  }
+
+  .section1 main .head .flexCont .btnMod {
+    padding: 3% 5%;
+    margin: auto;
+  }
+
+  .section1 main .contPedidos {
+    width: 100%;
+
+  }
+
+  .section1 main .contPedidos .itemPedido {
+    width: 95%;
+    margin: auto;
+    padding: 20px 0%;
+    border-bottom: 1px solid #c1c1c1;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px --color-primario;
+    background-color: var(--color-primario);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+
+  }
+
+  .section1 main .contPedidos .itemPedido .nombre {
+    text-align: center;
+    height: auto;
+    padding: 2%;
+    width: 100%;
+    border-radius: 50px;
+  }
+
+  .section1 main .contPedidos .itemPedido ol {
+    width: 100%;
+    margin: 20px 0%;
+  }
+
+  .section1 main .contPedidos .itemPedido ol li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section1 main .contPedidos .itemPedido ol li .right {
+    margin-left: auto;
+  }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .section1 {
+    width: 100%;
+  }
+
+  .section1 main {
+    width: 90%;
+    margin: 0px 5%;
+  }
+
+  .section1 main .head button {
+    margin: inherit;
+    margin-left: auto;
+  }
+
+
+  .section1 main .flexConte {
+    width: 100%;
+    height: 45%;
+    padding: 5px;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+}
+
+
+.section1 main .head .flexConte .btnMod {
+  width: 50% !important;
+  height: 40px !important;
+  margin-left: 3%;
+  font-size: 10pt !important;
+}
+
+  .section1 main .head .flexCont {
+    margin: 20px 0%;
+  }
+
+  .section1 main .head .flexCont .btnMod {
+    padding: 20px 5%;
+    margin: auto;
+  }
+
+  .section1 main .contPedidos {
+    width: 100%;
+
+  }
+
+  .section1 main .contPedidos .itemPedido {
+    width: 95%;
+    margin: 2%;
+    padding: 10px;
+    border-radius: 30px;
+    border: solid 1px --color-primario;
+    background-color: var(--color-primario);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+
+  }
+
+  .section1 main .contPedidos .itemPedido .nombre {
+    text-align: center;
+    height: auto;
+    padding: 10px;
+    width: 100%;
+    border-radius: 50px;
+    font-size: 18pt;
+    background-color: var(--color-primario);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  .section1 main .contPedidos .itemPedido ol {
+    width: 100%;
+    margin: 20px 0%;
+  }
+
+  .section1 main .contPedidos .itemPedido ol li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section1 main .contPedidos .itemPedido ol li .right {
+    margin-left: auto;
+  }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .section1 {
+    width: 100%;
+  }
+
+  .section1 main {
+    width: 80%;
+    margin: 20px 10%;
+  }
+
+  .section1 main .head {
+    width: 100%;
+  }
+
+  .section1 main .head button {
+    margin: inherit;
+    margin-left: auto;
+  }
+
+  .section1 main .flexConte {
+    width: 100%;
+    height: 45%;
+    padding: 5px;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+}
+
+
+.section1 main .head .flexConte .btnMod {
+  width: 50% !important;
+  height: 40px !important;
+  margin-left: 3%;
+  font-size: 10pt !important;
+}
+
+
+  .section1 main .head .flexCont {
+    margin: 10px 0%;
+  }
+
+  .section1 main .head .flexCont .btnMod {
+    padding: 10px 30px;
+    margin: auto;
+  }
+
+  .section1 main .contPedidos {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .section1 main .contPedidos .itemPedido {
+    width: 48%;
+    margin: 1%;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 1px --color-primario;
+    background-color: var(--color-primario);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+
+  }
+
+  .section1 main .contPedidos .itemPedido .nombre {
+    text-align: center;
+    height: auto;
+    padding: 10px;
+    width: 100%;
+    border-radius: 50px;
+    font-size: 13pt;
+    background-color: var(--color-primario);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  .section1 main .contPedidos .itemPedido ol {
+    width: 100%;
+    margin: 10px 0%;
+  }
+
+  .section1 main .contPedidos .itemPedido ol li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section1 main .contPedidos .itemPedido ol li .right {
+    margin-left: auto;
+  }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .section1 {
+    width: 100%;
+  }
+
+  .section1 main {
+    width: 80%;
+    margin: 20px 10%;
+  }
+
+  .section1 main .head {
+    width: 100%;
+  }
+
+  .section1 main .head button {
+    margin: inherit;
+    margin-left: auto;
+  }
+
+  .section1 main .flexConte {
+    width: 100%;
+    height: 5rem;
+    padding: 5px;
+    border: 0px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+
+.section1 main .head .flexConte .btnMod {
+  width: 50% !important;
+  height: 40px !important;
+  margin-left: 2%;
+  font-size: 10pt !important;
+}
+
+
+
+  .section1 main .head .flexCont {
+    margin: 10px 0%;
+  }
+
+  .section1 main .head .flexCont .btnMod {
+    padding: 10px 30px;
+    margin: auto;
+  }
+
+  .section1 main .contPedidos {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .section1 main .contPedidos .itemPedido {
+    width: 31.3%;
+    margin: 1%;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px --color-primario;
+    background-color: var(--color-primario);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+
+  }
+
+  .section1 main .contPedidos .itemPedido .nombre {
+    text-align: center;
+    height: auto;
+    padding: 10px;
+    width: 100%;
+    border-radius: 50px;
+    font-size: 13pt;
+    background-color: var(--color-primario);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  .section1 main .contPedidos .itemPedido ol {
+    width: 100%;
+    margin: 10px 0%;
+  }
+
+  .section1 main .contPedidos .itemPedido ol li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section1 main .contPedidos .itemPedido ol li .right {
+    margin-left: auto;
+  }
+}

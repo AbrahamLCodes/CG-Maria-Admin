@@ -1,0 +1,230 @@
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .section1{
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+     
+    }
+    .section1 main{
+        width: 90%;
+        height: 95%;
+        padding-top: 40px;
+        margin: auto;
+
+
+    }
+   
+    
+    .section1 main .flexCont .aceptar{
+        background-color: --color-primario !important;  
+    }
+
+    .section1 main .flexCont .start{
+        margin-right: auto;  
+    }
+    .section1 main .flexCont .cant{
+        margin-left: 10px;  
+    }
+    .section1 main .platillosPedidos .item{
+        width: 100%;
+        margin: 2% 0%;
+        padding: 7% 0%;
+        border-bottom: 1px solid #c1c1c1;
+        padding: 10px;
+        border-radius: 10px;
+        border: solid 1px --color-primario;
+        background-color: var(--color-primario);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+    .section1 main .repartidor{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        border: solid 1px --color-primario;
+        background-color: var(--color-primario);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+        border-radius: 10px;
+    }
+    .section1 main .repartidor .contBtnRep{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+
+    }
+    .section1 main .repartidor .contBtnRep .asignar{
+        width: 100% !important;
+        margin: 10px 0px;
+        background-color: rgba($color: #231010, $alpha: 1);
+    }
+    .section1 main .repartidor .contBtnRep .azar{
+        background-color: var(--color-primario);
+        width: 100% !important;
+        margin: 10px 0px;
+    }
+    .section1 main .repartidor .contBtnRep .openOrder{
+        background-color: var(--color-primario);
+        width: 100% !important;
+        margin: 10px 0px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+   
+    .section1{
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+     
+    }
+    .section1 main{
+        width: 90%;
+        height: 95%;
+        padding-top: 110px;
+        margin: auto;
+
+
+    }
+    .section1 main form{
+        width: 100%;
+        padding: 15px;
+      
+        
+    }
+    .section1 main .flexCont .aceptar{
+        background-color: --color-primario !important;  
+    }
+
+    .section1 main .flexCont .start{
+        margin-right: auto;  
+    }
+    .section1 main .platillosPedidos .item{
+        width: 100%;
+        margin: 2% 0%;
+        padding: 7% 0%;
+        border-bottom: 1px solid #c1c1c1;
+        padding: 10px;
+        border-radius: 10px;
+        border: solid 1px --color-primario;
+        background-color: var(--color-primario);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .section1{
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+     
+    }
+    .section1 main{
+        width: 90%;
+        height: 95%;
+        padding-top: 30px;
+        margin: auto;
+
+
+    }
+    .section1 main form{
+        width: 100%;
+        padding: 15px;
+      
+        
+    }
+    .section1 main .repartidor{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        border: solid 1px --color-primario;
+        background-color: var(--color-primario);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+        border-radius: 10px;
+    }
+    .section1 main .repartidor .contBtnRep{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+
+    }
+    .section1 main .repartidor .contBtnRep .asignar{
+        width: 100% !important;
+        margin: 10px 0px;
+        background-color: rgba($color: #231010, $alpha: 1);
+    }
+    .section1 main .repartidor .contBtnRep .azar{
+        background-color: var(--color-primario);
+        width: 100% !important;
+        margin: 10px 0px;
+    }
+    .section1 main .repartidor .contBtnRep .openOrder{
+        background-color: var(--color-primario);
+        width: 100% !important;
+        margin: 10px 0px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .section1 main .repartidor{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        border: solid 1px --color-primario;
+        background-color: var(--color-primario);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+        border-radius: 10px;
+    }
+    .section1 main .repartidor .contBtnRep{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+
+    }
+    .section1 main .repartidor .contBtnRep .asignar{
+        width: 98% !important;
+        margin: 10px 1%;
+        background-color: rgba($color: #231010, $alpha: 1);
+    }
+    .section1 main .repartidor .contBtnRep .azar{
+        background-color: var(--color-primario);
+        width: 48% !important;
+        margin: 10px 1%;
+    }
+    .section1 main .repartidor .contBtnRep .openOrder{
+        background-color: var(--color-primario);
+        width: 48% !important;
+        margin: 10px 1%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

@@ -1,0 +1,45 @@
+<ion-content>
+  <section class="section1">
+    <main>
+      <div class="head">
+        <h4>Usuarios del <br>
+            sistema
+        </h4>
+      </div>
+      <hr>
+      <ion-list>
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Filtrar por:</ion-label>
+          <ion-select placeholder="Seleccionar">
+            <ion-select-option value="f">Administradores</ion-select-option>
+            <ion-select-option value="f">Gerente de sucursal</ion-select-option>
+            <ion-select-option value="m">Recepción</ion-select-option>
+            <ion-select-option value="d">Repartidor</ion-select-option>
+          </ion-select>
+        </ion-item>    
+        <button class="itemTablet btnTablet" >Exportar registro </button>      
+      </ion-list>
+      <div class="flexOpciones">
+        <p>Opciones</p>
+        <div class="flexCont flexTablet">
+          <button class="itemTablet btnTablet" (click)="modal('nuevoRepartidor')">Cargar nuevo repartidor</button>
+          <button class="itemTablet btnTablet" (click)="modal('nuevo')">Cargar nuevo usuario </button>
+          <!-- <button class="itemTablet btnTablet" (click)="modal('csv')" >Cargar .CSV</button> -->
+        </div>
+        <button class="btnPop" (click)="opcionesRes($event,'opcionesUsuarios')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+      </div>
+      <hr>
+      <div class="productos">
+        <div class="flexOpciones" *ngFor="let usuario of usuarios">
+          <p>{{usuario.username}}</p>
+          <div class=" flexTablet">
+            <ion-toggle checked></ion-toggle>
+            <button class="itemTablet"  (click)="usuario.tipo != 'REPARTIDOR' ? editarUsuario(usuario) : editarRepartidor(usuario)">Editar</button>
+            <button class="itemTablet"  (click)="showUsuario(usuario)" style="background-color: --color-primario;">Ver</button>
+          </div>
+          <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+        </div>
+      </div>
+    </main>
+  </section>
+</ion-content>

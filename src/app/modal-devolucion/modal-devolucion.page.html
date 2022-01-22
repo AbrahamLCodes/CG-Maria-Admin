@@ -1,0 +1,96 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Devoluciones</h5>
+      
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+    <section class="section1">
+      <main>
+
+        <form action="">
+
+          <!-- <div class="flexCont" style="margin: 10px 0px;">
+            <a href="https://www.iloveimg.com/es/recortar-imagen" target="_blank" style="text-decoration: underline;">Recortar imagen</a>
+          </div>
+           
+      <ngx-dropzone class="dropzone init" (change)="onSelect($event)">
+      <ngx-dropzone-label>Cargar imagen del producto(max 1Mb) <br> 500px X 500px </ngx-dropzone-label>
+      <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+      <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+      </ngx-dropzone-preview>
+      </ngx-dropzone> -->
+      
+      <br>
+           <label for="">Introduce el número de ticket</label>
+          <input type="number">
+          <input type="search" placeholder="Buscar artículo">
+          <ion-list  style="height: 30vh; overflow: auto;">
+            <ion-item lines="none" style="border-bottom: solid 1px white; --padding-start: 5px; padding: 10px 0px;">
+              <p slot="start">Nombre del Artículo</p>
+              <button slot="end"><ion-icon name="refresh"></ion-icon></button>
+            </ion-item>
+            <ion-item lines="none" style="border-bottom: solid 1px white; --padding-start: 5px; padding: 10px 0px;">
+              <p slot="start">Nombre del Artículo</p>
+              <button slot="end"><ion-icon name="refresh"></ion-icon></button>
+            </ion-item>
+            <ion-item lines="none" style="border-bottom: solid 1px white; --padding-start: 5px; padding: 10px 0px;">
+              <p slot="start">Nombre del Artículo</p>
+              <button slot="end"><ion-icon name="refresh"></ion-icon></button>
+            </ion-item>
+            <ion-item lines="none" style="border-bottom: solid 1px white; --padding-start: 5px; padding: 10px 0px;">
+              <p slot="start">Nombre del Artículo</p>
+              <button slot="end"><ion-icon name="refresh"></ion-icon></button>
+            </ion-item>
+            <ion-item lines="none" style="border-bottom: solid 1px white; --padding-start: 5px; padding: 10px 0px;">
+              <p slot="start">Nombre del Artículo</p>
+              <button slot="end"><ion-icon name="refresh"></ion-icon></button>
+            </ion-item>
+            <ion-item lines="none" style="border-bottom: solid 1px white; --padding-start: 5px; padding: 10px 0px;">
+              <p slot="start">Nombre del Artículo</p>
+              <button slot="end"><ion-icon name="refresh"></ion-icon></button>
+            </ion-item>
+          </ion-list>
+
+      <br>
+          <ion-item lines="none" style="border-bottom: solid 1px white; --padding-start: 5px; padding: 10px 0px;">
+            <p slot="start">Nuevo saldo</p>
+            <p slot="end">$ 1,200.00 mxn</p>
+          </ion-item>
+          <ion-item lines="none" style="border-bottom: solid 1px white; --padding-start: 5px; padding: 10px 0px;">
+            <p slot="start">Devolucion</p>
+            <p slot="end">$ 200.00 mxn</p>
+          </ion-item>
+          <ion-item lines="none" style="border-bottom: solid 1px white; --padding-start: 5px; padding: 10px 0px;">
+            <ion-label>Abonar en:</ion-label>
+            <ion-select class="select" placeholder="Seleccionar">
+              <ion-select-option value="f">Monedero</ion-select-option>
+              <ion-select-option value="m">Cupón</ion-select-option>
+              <ion-select-option value="m3">Venta actual</ion-select-option>
+            </ion-select>
+          </ion-item>
+        <br>
+        <p><small>Escribe el número de cliente para abonar el saldo al monedero</small></p>
+        <input type="number">
+
+        <p><small>Escribir código de autorización</small></p>
+        <input type="text">
+          
+            <button>Finalizar</button>
+            <p style="text-align: center; width: 100%;"><small>Se reimprimira el ticket con los cambios</small></p>
+      
+      
+         </form>
+
+
+
+    
+      </main>
+    </section>
+
+    
+</ion-content>

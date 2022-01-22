@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Información</h5>
+      <button (click)="cerrarModal()">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+
+      <p>
+        <strong>Nombre del usuario:</strong> {{ queja.usuario.username }}<br>
+        <strong>Número de teléfono:</strong> {{ queja.usuario.telefono }}<br>
+        <strong>Correo electrónico:</strong> {{ queja.usuario.email }}<br>
+        <strong>Asunto:</strong> {{ queja.asunto }}<br>
+        <strong>Motivo:</strong> {{ queja.motivo }}<br>
+        <strong>Comentarios:</strong> {{ queja.comentarios }}<br>
+        <strong>Fecha:</strong> {{ clikFechas.fixYYYY_MM_DD(queja.created_at.split('T')[0]) }}
+      </p>
+      <hr>
+
+      <form [formGroup]="form" action="">
+        <h5>Enviar notificaión</h5>
+        <br>
+        <label for="">T&iacute;tulo</label>
+        <input formControlName="titulo" type="text">
+
+        <label for="">Mensaje</label>
+        <textarea formControlName="mensaje" name="" id="" cols="30" rows="10" style="border-radius: 10px;"></textarea>
+        <div class="flexCont">
+          <button (click)="enviarEmail()">Enviar</button>
+        </div>
+      </form>
+      <br>
+    </main>
+  </section>
+
+
+</ion-content>

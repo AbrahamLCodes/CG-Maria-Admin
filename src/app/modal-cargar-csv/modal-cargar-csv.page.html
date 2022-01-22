@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Cargar productos</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+    <section class="section1">
+      <main>
+       <p style="text-align: center;">Puedes cargar los productos de forma masiva mediante la plantilla .csv
+         descargala, alimentala y cargala en esta sección. <br>
+         *(Recuerda no cambiarle el formato a la plantilla y
+         tampoco borrar o añadir columnas al formato)*</p>
+       <form action="">
+
+        <div class="flexCont" style="margin: 10px 0px;">
+          <a href="#" target="_blank" style="text-decoration: underline;">Descargar plantilla</a>
+        </div>
+              <!-- in app.component.html -->
+<ngx-dropzone class="dropzone init" (change)="onSelect($event)">
+	<ngx-dropzone-label>Añadir la plantilla .csv <br> con tus productos</ngx-dropzone-label>
+	<ngx-dropzone-preview *="let f of files" [removable]="true" (removed)="onRemove(f)">
+		<ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+	</ngx-dropzone-preview>
+</ngx-dropzone>
+<br>
+
+
+        <div class="flexCont">
+          <button>Cargar</button>
+        </div>
+        
+       </form>
+      </main>
+    </section>
+
+    
+</ion-content>

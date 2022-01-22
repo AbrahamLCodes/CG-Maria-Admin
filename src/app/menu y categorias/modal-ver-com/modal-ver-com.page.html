@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Information</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      <p>Extra complements details</p>
+  
+      <p>
+        <strong>Title:</strong> {{complemento.title}} <br>
+        <strong>Max Quantity:</strong> {{complemento.max_quantity}} <br>
+        <strong>Options: </strong>
+        <ion-list *ngFor="let producto of complemento.productos ; let index = index">
+          <ion-item>
+            <strong>Title:</strong> &nbsp; <ion-label>{{ producto.titulo }}</ion-label>
+            <strong>Max Quantity:</strong> &nbsp; <ion-label>{{ complemento.opciones[index].max  }}</ion-label>
+          </ion-item>
+        </ion-list>
+        <br>
+      </p>
+      <br>
+      <div class="flexCont">
+        <button (click)="goTo('editarCom')">Edit Information</button>
+      </div>
+      <br>
+    </main>
+  </section>
+</ion-content>

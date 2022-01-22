@@ -1,0 +1,182 @@
+<ion-content>
+  <section class="section1">
+    <main>
+      <div class="head">
+        <h4>Pedidos<br>
+          del día</h4>
+        <!-- <ion-list>
+            <ion-item lines="none" color="black" class="select">
+              <ion-label>Sucursal seleccionada</ion-label>
+              <ion-select #sucursalSelect placeHolder="Todo" (ionChange)="changeSucursalSelected(sucursalSelect.value)">
+                <ion-select-option value="todo">Todo</ion-select-option>
+                <ion-select-option *ngFor="let sucursal of sucursales" value="{{sucursal.id_sucursal}}">{{sucursal.nombre}}</ion-select-option>
+              </ion-select>
+            </ion-item>          
+          </ion-list> -->
+        <div class="flexConte">
+          <button class="btnMod" (click)="slideTo(0);" #slide0> Pendiente ({{ pedidos.length }})</button>
+          <button class="btnMod" (click)="slideTo(1);" #slide1> Aceptado ({{ pedidosAceptados.length }})</button>
+          <button class="btnMod" (click)="slideTo(2);" #slide2> Preparando ({{ pedidosPreparando.length }})</button>
+          <button class="btnMod" (click)="slideTo(3);" #slide3> Listo ({{ pedidosListos.length }})</button>
+          <button class="btnMod" (click)="slideTo(4);" #slide4> Para entregar ({{ pedidosEnCamino.length }})</button>
+          <button class="btnMod" (click)="slideTo(5);" #slide5> Finalizado ({{ pedidosFinalizados.length }})</button>
+        </div>
+      </div>
+      <hr>
+      <ion-slides pager="false" #slider [options]="slideOpts">
+
+        <ion-slide>
+          <div class="contPedidos">
+            <div class="itemPedido" *ngFor="let pedido of pedidos">
+              <p class="nombre">{{pedido.cliente.username}}</p>
+              <ol class="platillos">
+                <li *ngFor="let producto of pedido.productos.carrito">
+                  <p>{{ producto.producto.titulo }}</p>
+                  <p class="right"></p>
+                </li>
+              </ol>
+              <ol class="tipo">
+                <li>
+                  <p>Tipo:</p>
+                  <p class="right">{{ pedido.ordena_y_recoje == true ? "Ordena y recoje" : "A domicilio"}}</p>
+                </li>
+              </ol>
+              <div class="flexCont">
+                <button style="background-color: rgb(232, 65, 65); color: white"
+                  (click)="cancelar(pedido)">Cancelar</button>
+                <button (click)="modalPedido(pedido)">Ver pedido</button>
+                <button (click)="aceptarOrden(pedido)">Aceptar Orden</button>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+
+        <ion-slide>
+          <div class="contPedidos">
+            <div class="itemPedido" *ngFor="let pedido of pedidosAceptados">
+              <p class="nombre">{{pedido.cliente.username}}</p>
+              <ol class="platillos">
+                <li *ngFor="let producto of pedido.productos.carrito">
+                  <p>{{ producto.producto.titulo }}</p>
+                  <p class="right"></p>
+                </li>
+              </ol>
+              <ol class="tipo">
+                <li>
+                  <p>Tipo:</p>
+                  <p class="right">{{ pedido.ordena_y_recoje == true ? "Ordena y recoje" : "A domicilio"}}</p>
+                </li>
+              </ol>
+              <div class="flexCont">
+                <button style="background-color: rgb(232, 65, 65); color: white"
+                  (click)="cancelar(pedido)">Cancelar</button>
+                <button (click)="modalPedido(pedido)">Ver pedido</button>
+                <button (click)="prepararOrden(pedido)">Preparar orden</button>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+
+        <ion-slide>
+          <div class="contPedidos">
+            <div class="itemPedido" *ngFor="let pedido of pedidosPreparando">
+              <p class="nombre">{{pedido.cliente.username}}</p>
+              <ol class="platillos">
+                <li *ngFor="let producto of pedido.productos.carrito">
+                  <p>{{ producto.producto.titulo }}</p>
+                  <p class="right"></p>
+                </li>
+              </ol>
+              <ol class="tipo">
+                <li>
+                  <p>Tipo:</p>
+                  <p class="right">{{ pedido.ordena_y_recoje == true ? "Ordena y recoje" : "A domicilio"}}</p>
+                </li>
+              </ol>
+              <div class="flexCont">
+                <button style="background-color: rgb(232, 65, 65); color: white"
+                  (click)="cancelar(pedido)">Cancelar</button>
+                <button (click)="modalPedido(pedido)">Ver pedido</button>
+                <button
+                  (click)="pedido.ordena_y_recoje == true ? listoOrden(pedido) : repartirOrden(pedido)">Finalizar</button>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="contPedidos">
+            <div class="itemPedido" *ngFor="let pedido of pedidosListos">
+              <p class="nombre">{{pedido.cliente.username}}</p>
+              <ol class="platillos">
+                <li *ngFor="let producto of pedido.productos.carrito">
+                  <p>{{ producto.producto.titulo }}</p>
+                  <p class="right"></p>
+                </li>
+              </ol>
+              <ol class="tipo">
+                <li>
+                  <p>Tipo:</p>
+                  <p class="right">{{ pedido.ordena_y_recoje == true ? "Ordena y recoje" : "A domicilio"}}</p>
+                </li>
+              </ol>
+              <div class="flexCont">
+                <button style="background-color: rgb(232, 65, 65); color: white"
+                  (click)="cancelar(pedido)">Cancelar</button>
+                <button (click)="modalPedido(pedido)">Ver pedido</button>
+                <button (click)="pedido.ordena_y_recoje == true ? finalizarOrder(pedido) : repartirOrden(pedido)">{{
+                  pedido.ordena_y_recoje == true ? "Recoger" : "Entregar"}}</button>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="contPedidos">
+            <div class="itemPedido" *ngFor="let pedido of pedidosEnCamino">
+              <p class="nombre">{{pedido.cliente.username}}</p>
+              <ol class="platillos">
+                <li *ngFor="let producto of pedido.productos.carrito">
+                  <p>{{ producto.producto.titulo }}</p>
+                  <p class="right"></p>
+                </li>
+              </ol>
+              <ol class="tipo">
+                <li>
+                  <p>Tipo:</p>
+                  <p class="right">{{ pedido.ordena_y_recoje == true ? "Ordena y recoje" : "A domicilio"}}</p>
+                </li>
+              </ol>
+              <div class="flexCont">
+                <button style="background-color: rgb(232, 65, 65); color: white"
+                  (click)="cancelar(pedido)">Cancelar</button>
+                <button (click)="modalPedido(pedido)">Ver pedido</button>
+                <button (click)="finalizarOrderDomicilio(pedido)"> Finalizar orden </button>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="contPedidos">
+            <div class="itemPedido" *ngFor="let pedido of pedidosFinalizados">
+              <p class="nombre">{{pedido.cliente.username}}</p>
+              <ol class="platillos">
+                <li *ngFor="let producto of pedido.productos.carrito">
+                  <p>{{ producto.producto.titulo }}</p>
+                  <p class="right"></p>
+                </li>
+              </ol>
+              <ol class="tipo">
+                <li>
+                  <p>Tipo:</p>
+                  <p class="right">{{ pedido.ordena_y_recoje == true ? "Ordena y recoje" : "A domicilio"}}</p>
+                </li>
+              </ol>
+              <div class="flexCont">
+                <button (click)="modalPedido(pedido)">Ver pedido</button>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </main>
+  </section>
+</ion-content>

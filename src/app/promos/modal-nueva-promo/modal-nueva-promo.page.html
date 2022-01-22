@@ -1,0 +1,142 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5 class="titulomodal">Crea una promoción</h5>
+
+      <button (click)="cerrarModal()">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      <form [formGroup]="promoForm">
+
+        <hr>
+        <p>Identificador de la promoción<span style="color: red;">*</span></p>
+        <p><small>Máximo 60 Caracteres</small></p>
+        <input formControlName="identificador" type="text" placeholder="Promo verano">
+
+        <ion-item class="itemIon" lines="none">
+          <label for="">Promocionar por rango de fecha</label>
+          <ion-checkbox formControlName="esPorFechas" slot="end" #rangoFechas></ion-checkbox>
+        </ion-item>
+
+        <div *ngIf="rangoFechas.checked == true">
+          <p>Selecciona el rango de fechas en el cual será valida esta promoción</p>
+          <label for="">Fecha de inicio</label>
+          <input formControlName="fechaInicial" type="date">
+
+          <label for="">Fecha de expiración</label>
+          <input formControlName="fechaFinal" type="date">
+        </div>
+        <hr>
+
+        <ion-item class="itemIon" lines="none">
+          <label for="">Aplica a todas las sucursales: </label>
+          <ion-checkbox formControlName="todasSucursales" slot="end" #todasSucursales (ionChange)="changeSucursalesOption($event)"></ion-checkbox>
+        </ion-item>
+
+        <ion-item lines="none" color="black" class="select" *ngIf="todasSucursales.checked == false">
+          <ion-label>Asignar a:</ion-label>
+          <ion-select formControlName="sucursales" placeholder="Sucursal" multiple="true">
+            <ion-select-option *ngFor="let sucursal of sucursales" [value]="sucursal.id">{{ sucursal.nombre }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <hr>
+
+        <ion-item class="itemIon" lines="none">
+          <label for="">Programar promoción todos los dias</label>
+          <ion-checkbox formControlName="esDiaria" slot="end" #promocionDiaria></ion-checkbox>
+        </ion-item>
+        <div *ngIf="promocionDiaria.checked == false">
+          <p>Selecciona el los días en los que será valida esta promoción</p>
+
+          <ion-item lines="none" color="black" class="select">
+          <label for="">Fecha de inicio<span style="color: red;">*</span></label>
+            <ion-label>Seleccionar los dias<span style="color: red;">*</span>:</ion-label>
+            <ion-select formControlName="dias" placeholder="Dias" multiple="true">
+              <ion-select-option value="Lunes">Lunes</ion-select-option>
+              <ion-select-option value="Martes">Martes</ion-select-option>
+              <ion-select-option value="Miércoles">Miércoles</ion-select-option>
+              <ion-select-option value="Jueves">Jueves</ion-select-option>
+              <ion-select-option value="Viernes">Viernes</ion-select-option>
+              <ion-select-option value="Sábado">Sábado</ion-select-option>
+              <ion-select-option value="Domingo">Domingo</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+        </div>
+        <ion-item class="itemIon" lines="none">
+          <label for="">Programar rango de hora</label>
+          <ion-checkbox formControlName="esTodoDia" slot="end" #promocionHora></ion-checkbox>
+        </ion-item>
+        <div *ngIf="promocionHora.checked == true">
+
+          <label for="">Hora de inicio</label>
+          <input formControlName="horaInicial" type="time">
+
+          <label for="">Hora de finalización</label>
+          <input formControlName="horaFinal" type="time">
+        </div>
+        <hr>
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Selecciona el tipo de promoción<span style="color: red;">*</span>:</ion-label>
+          <ion-select formControlName="tipoPromocion" #tipoPromocion placeholder="Seleccionar" multiple="false">
+            <ion-select-option value="Porcentaje">Porcentaje %</ion-select-option> 
+            <!-- <ion-select-option value="Cantidad">Cantidad $</ion-select-option>
+            <ion-select-option value="Gratis">Gratis</ion-select-option> -->
+          </ion-select>
+        </ion-item>
+
+
+        <ion-item *ngIf="tipoPromocion.value == 'Porcentaje'">
+          <input formControlName="valorPromocion" type="number" placeholder="1" style="margin-right: 5px;">
+          <p> % </p>
+        </ion-item>
+
+        <!--
+          <ion-item *ngIf="tipoPromocion.value == 'Cantidad'">
+            <p> En la compra de: </p>
+            <input formControlName="cantidadMinima" type="number" placeholder="2" style="margin-right: 5px;">
+            <p> Llevate n° mas: </p>
+            <input formControlName="cantidadMaxima" type="number" placeholder="1" style="margin-left: 5px;">
+          </ion-item>
+        -->
+
+        <ion-item *ngIf="tipoPromocion.value == 'Gratis'">
+          <input formControlName="gratisMinima" type="number" placeholder="2" style="margin-right: 5px;">
+          <p> X </p>
+          <input formControlName="gratisMaxima" type="number" placeholder="1" style="margin-left: 5px;">
+        </ion-item>
+
+
+        <p style="margin-top: 25px;">Maximo de compras permitido por cliente(0 para numero ilimitado):</p>
+        <input formControlName="numeroMaxProductos" type="number" placeholder="1">
+
+        <ion-item class="itemIon" lines="none">
+          <label for="">Aplica para todos los productos</label>
+          <ion-checkbox formControlName="aplicaTodosProductos" slot="end" #aplicaTodo (ionChange)="changeProductosOption($event)"></ion-checkbox>
+        </ion-item>
+
+        <ion-item lines="none" color="black" class="select" *ngIf="aplicaTodo.checked == false">
+          <ion-label>Seleccionar productos<span style="color: red;">*</span>:</ion-label>
+          <ion-select formControlName="productos" placeholder="Productos" multiple="true">
+            <ion-select-option *ngFor="let producto of productos" [value]="producto.id">{{ producto.titulo }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <hr>
+        <button type="button" (click)="save()">{{ editar ? 'Editar' : 'Registrar'}}</button>
+        
+      </form>
+    </main>
+  </section>
+
+</ion-content>

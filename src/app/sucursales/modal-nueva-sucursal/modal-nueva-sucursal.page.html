@@ -1,0 +1,102 @@
+  <ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Crear sucursal</h5>
+      
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      <form [formGroup]="sucursalForm" action="">
+        <div class="flexCont" style="margin: 10px 0px;">
+          <a href="https://www.iloveimg.com/es/redimensionar-imagen" target="_blank" style="text-decoration: underline;">Recortar imagen</a>
+        </div>
+
+        <ngx-dropzone [multiple]="false" class="dropzone init" (change)="onSelect($event)">
+          <ngx-dropzone-label> Cargar imagen (max 2mb) <br> 500px X 500px </ngx-dropzone-label>
+          <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
+            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+          </ngx-dropzone-image-preview>
+        </ngx-dropzone>
+      
+        <br>
+        <ion-item class="itemIon" lines="none">
+          <label for="">Activo para ventas online</label>
+          <ion-checkbox formControlName="activoOnline" slot="end" checked></ion-checkbox>
+        </ion-item>
+
+        <label for="">Nombre de sucursal</label>
+        <input formControlName="nombre" type="text">
+        
+        <label for="">Dirección de la sucursal</label>
+        <input formControlName="direccion" type="text">
+
+        <label for="">Precio mínimo de pedido</label>
+        <input formControlName="precio_minimo" type="number">
+
+        <!-- 
+          En construcción
+        <p><strong>Area de operación</strong></p>
+        <p>Select the areas where your restaurant can deliver home delivery. for
+          you can create any shape with the pointer inside the map.</p>
+        
+        <br>
+
+        <div class="mapAreas">
+          <div id="map" style="border:0;" allowfullscreen="" loading="lazy"></div>
+        </div> -->
+
+        <hr>
+
+        <p>Configuración de entrega</p>
+        
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Tipo de entrega:</ion-label>
+          <ion-select formControlName="tipo_entrega" placeholder="Entrega">
+            <ion-select-option value="DOMICILIO">A domicilio</ion-select-option>
+            <ion-select-option value="LOCAL">Solo en local</ion-select-option>
+            <ion-select-option value="AMBOS">Ambas</ion-select-option>
+          </ion-select>
+        </ion-item> 
+
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Tipo de cargo entrega:</ion-label>
+          <ion-select formControlName="tipo_cargo" placeholder="Cargo">
+            <ion-select-option value="1">Cargo fijo</ion-select-option>
+            <ion-select-option value="2">Cargo dinamico</ion-select-option>
+          </ion-select>
+        </ion-item> 
+
+        <label for="">Gastos de envio</label>
+        <input formControlName="gastos_envio" type="number" placeholder="Ex 150 or 10%">
+
+        <label for="">Porcentaje de comisión</label>
+        <input formControlName="porcentaje_comision" type="number" placeholder="Ex 5%">
+        <label for="">Tax</label>
+        <input formControlName="iva" type="number" placeholder="Ex 5%">
+        <br>
+        <p><small>Selecciona los métodos de pago que aceptaras.</small></p>
+        <ion-item class="itemIon" lines="none">
+          <label for="">Pagos en efectivo</label>
+          <ion-checkbox formControlName="pago_efectivo" slot="end" ></ion-checkbox>
+        </ion-item>
+
+        <ion-item class="itemIon" lines="none">
+          <label for="">Monedero electrónico</label>
+          <ion-checkbox formControlName="pago_monedero" slot="end" ></ion-checkbox>
+        </ion-item>
+
+        <ion-item class="itemIon" lines="none">
+          <label for="">Pagos con tarjeta</label>
+          <ion-checkbox formControlName="pago_tarjeta" slot="end" ></ion-checkbox>
+        </ion-item>
+        <hr>
+        <button (click)="submitSucursal()">Guardar</button>
+      </form>
+    </main>
+  </section>
+</ion-content>

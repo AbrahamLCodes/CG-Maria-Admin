@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Información</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+    <section class="section1">
+      <main>
+        <p>Imagen del cupón</p>
+        <br>
+        <img src="../../assets/img/fondo-preguntas.jpg" width="40%" style="margin: 0% 30%;" alt="">
+        <br>
+        <br>
+       <p>Identificadores</p>
+       <div class="flexCont">
+         <div class="item" style="display: block; text-align: center;">
+           <p>QR</p>
+          <img src="../../assets/img/fondo-preguntas.jpg" alt="">
+          <button>Descargar</button>
+         </div>
+
+         <div class="item" style="display: block; text-align: center;">
+          <p>Codigo de barras</p>
+         <img src="../../assets/img/fondo-preguntas.jpg" alt="">
+         <button>Descargar</button>
+        </div>
+       </div>
+       <br>
+       <div class="flexCont" style="display: block; text-align: center;">
+        <p>NIP secreto</p>
+        <br>
+       <h4>ECGVT43</h4>
+       <br>
+       <button>Copiar</button>
+      </div>
+<hr>
+       <p>
+        <strong>Titulo:</strong> Verano loco<br>
+        <strong>Lineamientos:</strong> Lineamientos lorem<br>
+        <strong>Fecha de inicio:</strong> 14-06-2021<br>
+        <strong>Fecha de expiración:</strong> 25-06-2021<br>
+        <strong>Repetir cada año en las mismas fechas:</strong> Si<br>
+        <strong>Plataformas validas:</strong> Android, IOS, Sucursal<br>
+        <strong>Crear QR, Código de barras y NIP secreto:</strong> Si<br>
+        <strong>Asignar a:</strong>  sucursal 1<br>
+      </p>
+     
+
+<br>
+        <div class="flexCont">
+          <button (click)="goTo('editar')">Editar Información</button>
+        </div>
+        <br>
+
+      </main>
+    </section>
+
+    
+</ion-content>

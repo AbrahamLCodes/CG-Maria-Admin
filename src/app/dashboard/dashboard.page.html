@@ -1,0 +1,94 @@
+<ion-content>
+  <section *ngIf="quejas" class="section1">
+    <main>
+      <div class="modulos">
+        
+        <div class="itemModulo">
+          <div class="img" style=" background-image: url(../../assets/img/restaurante.jpg);"></div>
+          <div class="colorBack">
+            <h5>Restaurante</h5> 
+            <div class="opciones">
+              <button (click)="opcionesRes($event,'restaurante')"><ion-icon name="ellipsis-horizontal"></ion-icon></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="itemModulo">
+          <div class="img" style=" background-image: url(../../assets/img/fidelizacion.jpg);">
+          </div>
+          <div class="colorBack">
+            <h5>Marketing</h5> 
+            <div class="opciones">
+              <button (click)="opcionesRes($event,'fidelizacion')" ><ion-icon name="ellipsis-horizontal"></ion-icon></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="itemModulo">
+          <div class="img" style=" background-image: url(../../assets/img/usuariosapp.jpg);">
+          </div>
+          <div class="colorBack">
+            <h5>Clientes</h5> 
+            <div class="opciones">
+              <button [routerLink]="['/usuariosapp']" ><ion-icon name="chevron-forward"></ion-icon></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="itemModulo">
+          <div class="img" style=" background-image: url(../../assets/img/quejas.png);">
+            <div class="flexCont" style="background-color: rgba(0, 0, 0, .8); height: 100%;">
+              <div class="item" style="flex-wrap:wrap; text-align: center; border: solid 2px white; border-radius: 10px; height: 80%; padding: 10px;">
+                  <p style="width: 100%; color: white;">No leído</p>
+                  <h5 style="width: 100%; color: white;"> {{ quejasNoLeidas }} </h5>
+              </div>
+              <div class="item" style="flex-wrap:wrap; text-align: center; border: solid 2px white; border-radius: 10px; height: 80%; padding: 10px;">
+                <p style="width: 100%; color: white;">Total de quejas y sugerencias</p>
+                <h5 style="width: 100%; color: white;"> {{ quejas.length }} </h5>
+              </div>
+            </div>
+          </div>
+          <div class="colorBack">
+            <h5>Qujas y sugerencias</h5> 
+            <div class="opciones">
+              <button [routerLink]="['/quejas']" ><ion-icon name="chevron-forward"></ion-icon></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="itemModulo">
+          <div class="img" style=" background-image: url(../../assets/img/notificaciones.jpg);">
+          </div>
+          <div class="colorBack">
+            <h5>Notificaciones push</h5> 
+            <div class="opciones">
+              <button [routerLink]="['/notificaciones-push']" ><ion-icon name="chevron-forward"></ion-icon></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="itemModulo">
+          <div class="img" style=" background-image: url(../../assets/img/reportes.jpg);">
+            <div class="flexCont" style="background-color: rgba(0, 0, 0, .8); height: 100%;">
+              <div class="item" style="flex-wrap:wrap; text-align: center; border: solid 2px white; border-radius: 10px; height: 80%; padding: 10px;">
+                <p style="width: 100%; color: white;">Ingresos del día</p>
+                <h5 style="width: 100%; color: white;">$ 17,000 </h5>
+              </div>
+              <div class="item" style="flex-wrap:wrap; text-align: center; border: solid 2px white; border-radius: 10px; height: 80%; padding: 10px;">
+                <p style="width: 100%; color: white;">Ingresos del mes</p>
+                <h5 style="width: 100%; color: white;">$ 17,000 </h5>
+              </div>
+            </div>
+          </div>
+          <div class="colorBack">
+            <h5>Reportes</h5> 
+            <div class="opciones">
+              <button (click)="opcionesRes($event,'reportes')"><ion-icon name="ellipsis-horizontal"></ion-icon></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </section>
+</ion-content>

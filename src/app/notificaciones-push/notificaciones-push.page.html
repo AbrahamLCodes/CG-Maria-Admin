@@ -1,0 +1,67 @@
+<ion-content>
+  <section class="section1">
+    <main>
+      <div class="head">
+       
+           
+            <h4>Notificaciones<br>
+                push</h4>
+          
+ 
+          <!-- <ion-list>
+            <ion-item lines="none" color="black" class="select">
+              <ion-label>Sucursal seleccionada</ion-label>
+              <ion-select placeholder="Sucursal 1">
+                <ion-select-option value="f">Sucursal 1</ion-select-option>
+                <ion-select-option value="m">Sucursal 2</ion-select-option>
+              </ion-select>
+            </ion-item>          
+          </ion-list> -->
+      </div>
+     
+      <hr>
+      <ion-list>
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Filtrar por:</ion-label>
+          <ion-select placeholder="Seleccionar">
+            <ion-select-option value="jk">Todas</ion-select-option>
+            <ion-select-option value="f">Ultimas enviadas</ion-select-option>
+            <ion-select-option value="h">Programadas</ion-select-option>
+            <ion-select-option value="g">IOS</ion-select-option>
+            <ion-select-option value="y">Android</ion-select-option>
+            <ion-select-option value="i">PWA</ion-select-option>
+          </ion-select>
+        </ion-item>    
+      </ion-list>
+      <div class="flexCont" style="width: 100%;">
+        <button  style="margin: 1%; background-color: --color-primario;" (click)="modal('nuevo')">Enviar notificación</button>
+        <button  style="margin: 1%;">Exportar registro</button> 
+      </div>
+      <hr>
+
+      <div class="productos">
+        <div class="flexOpciones">
+          <p>Nuevos platillos - 01/06/2021</p>
+          <div class=" flexTablet">
+            <button class="itemTablet"  (click)="alert('borrar')" >Borrar</button>
+                <button class="itemTablet"  (click)="modal('editar')" >Editar</button>
+            <button class="itemTablet"  (click)="modal('ver')" style="background-color: --color-primario;">Ver</button>
+          </div>
+         
+          <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+        </div>
+
+        <div class="flexOpciones">
+          <p>Verano loco - 11/05/2021</p>
+          <div class=" flexTablet">
+            <button class="itemTablet"  (click)="alert('borrar')" >Borrar</button>
+                <button class="itemTablet"  (click)="modal('editar')" >Editar</button>
+            <button class="itemTablet"  (click)="modal('ver')" style="background-color: --color-primario;">Ver</button>
+          </div>
+         
+          <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+        </div>
+      </div>
+    </main>
+  </section>
+</ion-content>

@@ -1,0 +1,98 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Dulce Aguirre</h5>
+      
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+    <section class="section1">
+      <main>
+        <button style="width: 100%;">Enviar formulario previo cita</button>
+<br>  
+        <div class="flexCont">
+          <button (click)="goTo('cot')">Cotización</button> <button (click)="goTo('con')">Contrato</button> <button (click)="goTo('agenda')">Agendar</button>
+        </div>
+        <ion-item lines="none" style="margin: 2% 0%;">
+          <ion-label>Fecha del evento</ion-label>
+          <ion-badge slot="end">17/07/2021</ion-badge>
+        </ion-item>
+        <ion-item lines="none" style="margin: 2% 0%;">
+          <ion-label>Evento</ion-label>
+          <ion-badge slot="end">Boda</ion-badge>
+        </ion-item>
+        <ion-item lines="none" style="margin: 2% 0%;">
+          <ion-label>Cliente</ion-label>
+          <ion-badge slot="end">Dulce Aguirre</ion-badge>
+        </ion-item>
+        <ion-item lines="none" style="margin: 2% 0%;">
+          <ion-label>Teléfono</ion-label>
+          <ion-badge slot="end">6566666235</ion-badge>
+        </ion-item>
+        <ion-item lines="none" style="margin: 2% 0%;">
+          <ion-label>Whatsapp</ion-label>
+          <ion-badge slot="end">SI</ion-badge>
+        </ion-item>
+        <ion-item lines="none" style="margin: 2% 0%;">
+          <ion-label>Correo</ion-label>
+          <ion-badge slot="end">dulcedemanzana@gmail.com</ion-badge>
+        </ion-item>
+        <hr>
+        <p>Notas: <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptatum doloribus vero harum atque.
+        Voluptatum quis deleniti nisi odit similique officia ea earum quo? Harum asperiores nesciunt voluptas optio nisi.</p>
+
+<hr>
+<p><strong>Crea un cupón para este cliente</strong></p>
+<form action="">
+
+<br>
+<label for="">Fecha de inicio</label>
+<input type="date">
+
+<label for="">Fecha de expiración</label>
+<input type="date">
+
+<ion-list color="none">
+<ion-item class="itemIon" lines="none">
+<label for="">Porcentaje</label>
+<ion-checkbox slot="end" ></ion-checkbox>
+</ion-item>
+<input type="number">
+<ion-item class="itemIon" lines="none">
+<label for="">Cantidad</label>
+<ion-checkbox slot="end" ></ion-checkbox>
+</ion-item>
+<input type="number">
+</ion-list>
+
+
+
+<button> Crear cupón único</button>
+</form>
+       
+<hr>
+<ion-list>
+  <ion-item lines="none">
+    <ion-label slot="start">Cupón -10%</ion-label>
+   <button slot="end"><ion-icon name="trash-outline"></ion-icon></button>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label slot="start">Cupón -10%</ion-label>
+   <button slot="end"><ion-icon name="trash-outline"></ion-icon></button>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label slot="start">Cupón -10%</ion-label>
+   <button slot="end"><ion-icon name="trash-outline"></ion-icon></button>
+  </ion-item>
+</ion-list>
+<hr>
+<br>
+      </main>
+    </section>
+
+    
+</ion-content>

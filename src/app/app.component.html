@@ -1,0 +1,10 @@
+<app-spinner></app-spinner>
+<ion-app>  
+  <ion-router-outlet>
+   
+      <app-botonera ></app-botonera>
+      <app-header *ngIf="['/','/login'].indexOf(this.router.url) == -1"></app-header>
+   
+  </ion-router-outlet>
+ 
+</ion-app>

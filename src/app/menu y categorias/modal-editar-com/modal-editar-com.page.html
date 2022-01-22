@@ -1,0 +1,104 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Edit extra complement</h5>
+      
+      <button ><ion-icon name="close-outline" (click)="cerrarModal()"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      <button id="botonestype" (click)="addOption()">Add Option</button>
+      <button id="trashButton" (click)="eraseOptions()" [style.backgroundColor]="disabledButtonColor" [disabled]="disabledButton"><i class="fas fa-trash"></i></button>
+      <form [formGroup]="complementoForm">
+        <div class="flexCont">
+
+          <div class="togle">
+            <p style="margin: 3px;">Status</p>
+            <ion-toggle id="iontog" formControlName="predeterminado"></ion-toggle>
+
+            <div>
+              <ion-input formControlName="title" placeholder="Enter Type Title"></ion-input>
+            </div>
+
+          </div>
+            
+          <div class="required">
+            <p style="margin: 7px;">Required</p>
+            <ion-checkbox formControlName="required" (click)="mostrarSelect"></ion-checkbox>
+
+            <div>
+              <!-- <ion-select placeholder="Quantity">
+                <ion-select-option>1</ion-select-option>
+                <ion-select-option>2</ion-select-option>
+                <ion-select-option>3</ion-select-option>
+              </ion-select> -->
+              <ion-input type="number" formControlName="max_quantity"></ion-input>
+
+            </div>
+          </div>
+   
+        </div>
+
+      <div class="flexCont2" *ngFor="let opcion of opciones ; let index = index">
+        <div class="checkbox">
+          <div class="checkio">
+            <p>Select</p>
+            <ion-checkbox [checked]="opcion.select" (ionChange)="onSelectActive($event, index)"></ion-checkbox>
+          </div>
+          
+          <div class="togle">
+            <p>Status</p>
+            <ion-toggle [checked]="opcion.default" (ionChange)="onSelectActiveStatus($event, index)"></ion-toggle>
+          </div>
+
+          <div class="selec-ion">
+            <ion-item>
+              <ion-select placeholder="Option Title" (ionChange)="onSelect($event, index)">
+                <ion-select-option *ngFor="let producto of productos" [value]="producto" (selected)="opcion.product === producto.id ? true : null">{{producto.titulo}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </div>
+          
+        </div>
+
+        <div class="price">
+          <div class="pricein">
+            <ion-input type="number" [value]="opcion.price" placeholder="Price" (keyup)="onKeyUpPrice($event, index)"></ion-input>
+          </div>
+
+          <div class="allow_quantity">
+            <ion-checkbox [checked]="opcion.allow_quantity" #allowQuantity (ionChange)="onChangeBox($event, index)"></ion-checkbox>
+            <p>Allow quantity?</p>
+          </div>
+
+          <div class="max" *ngIf="opcion.allow_quantity == true">
+            <ion-input type="number"  [value]="opcion.max" placeholder="Max" (keyup)="onKeyUpQuantity($event, index)"></ion-input>
+          </div>
+
+        </div>
+      </div>
+        <!-- <br>
+        <label for="">Title</label>
+        <input formControlName="titulo" type="text">
+      
+        <label for="">Price</label>
+        <input formControlName="precio" type="number">
+
+        <hr>
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Availability in:</ion-label>
+          <ion-select formControlName="sucursales" placeholder="Elige una sucursal" multiple="true">
+            <ion-select-option *ngFor="let sucursal of sucursales" value="{{sucursal.id}}">{{sucursal.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item> 
+        <hr>
+        <button (click)="submitComplemento()">Save</button> -->
+      </form>
+        <button id="botonestype" (click)="submitComplemento()">Submit</button>
+    </main>
+  </section>
+</ion-content>

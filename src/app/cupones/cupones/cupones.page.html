@@ -1,0 +1,56 @@
+<ion-content>
+  <section class="section1">
+    <main>
+      <div class="head">     
+        <h4>Cupones</h4>  
+      </div>
+     
+      <hr>
+
+      <ion-list>
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Filtrar por:</ion-label>
+          <ion-select placeholder="Seleccionar">
+            <ion-select-option value="jk">Todas</ion-select-option>
+            <ion-select-option value="f">Expirados</ion-select-option>
+            <ion-select-option value="h">Más canjeados</ion-select-option>
+            <ion-select-option value="g">Usados en IOS</ion-select-option>
+            <ion-select-option value="y">Usados enAndroid</ion-select-option>
+            <ion-select-option value="i">Usados en PWA</ion-select-option>
+            <ion-select-option value="i">Usados en sucursal</ion-select-option>
+          </ion-select>
+        </ion-item>    
+      </ion-list>
+
+      <div class="flexCont" style="width: 100%;">
+        <button  style="margin: 1%; background-color: --color-primario;" (click)="modal('nuevo')">Nuevo cupón</button>
+        <button  style="margin: 1%;">Exportar registro</button> 
+      </div>
+      <hr>
+
+      <div class="productos">
+
+        <div class="flexOpciones">
+          <p>Verano 2021 <br> <small>2E5H12 / 14-06-2021 - 20-06-2021</small></p>
+          <div class=" flexTablet">
+            <button class="itemTablet"  (click)="alert('borrar')" >Borrar</button>
+                <button class="itemTablet"  (click)="modal('editar')" >Editar</button>
+            <button class="itemTablet"  (click)="modal('ver')" style="background-color: --color-primario;">Ver</button>
+          </div>
+          <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+        </div>
+
+        <div class="flexOpciones">
+          <p>Verano loco <br> <small>2DTU56 / 05-06-2021 - 29-06-2021</small></p>
+          <div class=" flexTablet">
+            <button class="itemTablet"  (click)="alert('borrar')" >Borrar</button>
+                <button class="itemTablet"  (click)="modal('editar')" >Editar</button>
+            <button class="itemTablet"  (click)="modal('ver')" style="background-color: --color-primario;">Ver</button>
+          </div>
+         
+          <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+        </div>
+      </div>
+    </main>
+  </section>
+</ion-content>

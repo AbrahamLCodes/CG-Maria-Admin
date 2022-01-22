@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Crear nueva categor&iacute;a</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      <form [formGroup]="categoriaForm">
+        <br>
+        <label for="">T&iacute;tulo</label>
+        <input formControlName="titulo" type="text">
+        <hr>
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Disponible en:</ion-label>
+          <ion-select formControlName="sucursales" placeholder="Elige una sucursal" multiple="true">
+            <ion-select-option *ngFor="let sucursal of sucursales" value="{{sucursal.id}}">{{sucursal.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item> 
+        <hr>
+        <button (click)="submitCategoria()">Guardar</button>
+      </form>
+    </main>
+  </section>
+</ion-content>

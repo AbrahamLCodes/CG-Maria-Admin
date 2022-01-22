@@ -1,0 +1,112 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>&nbsp;</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+    <section class="section1">
+      <main>
+       <h5>Cliente</h5>
+       <p><strong>{{ pedido.cliente.username }}</strong></p>
+       <p>Ordem: {{ pedido.id }}</p>
+       <p>Hora y fecha: {{ hora }} {{ fecha }}</p>
+       <br>
+       <!-- asignar repartidor -->
+       <form [formGroup]="pedidoForm" action="" *ngIf="!pedido.ordena_y_recoje">
+        <div class="repartidor">
+          <ion-list>
+            <ion-item lines="none" color="black" class="select">
+              <ion-label>Seleccionar un repartidor</ion-label>
+              <ion-select (ionChange)="elegirRepartidor($event)" formControlName="repartidor">
+                <ion-select-option *ngFor="let repartidor of repartidores" [value]="repartidor.id">{{ repartidor.username }}</ion-select-option>
+              </ion-select>
+            </ion-item>          
+          </ion-list>
+          <div class="contBtnRep">
+            <button class="asignar" (click)="asignarRepartidor()">Asignar repartidor</button>
+            <!-- <button class="azar">Seleccionar al azar</button>
+            <button class="openOrder"> Abrir orden para recolección </button> -->
+          </div>
+        </div>
+      </form>
+       <br>
+        <!-- asignar repartidor -->
+       
+       <!-- <div class="flexCont">
+         <button class="declinar">Declinar orden</button>
+         <button class="aceptar">Aceptar orden</button>
+       </div>
+       <br> -->
+       <!-- <button style="width: 100%;">Ver en maps</button> -->
+       <hr>
+       <!-- List of Input Items -->
+
+    <div class="flexCont">
+      <p class="start">Método de pago</p>
+      <p>{{ pedido.tipo_pago }}</p>
+    </div>
+    <br>
+    <div class="flexCont">
+      <p class="start">Tipo de orden</p>
+      <p>{{ pedido.ordena_y_recoje == true ? "Pick Up" : "Delivery"}}</p>
+    </div>
+
+    <div class="platillosPedidos">
+      <div class="item" *ngFor="let producto of pedido.productos.carrito">
+        <div class="flexCont">
+          <p class="start">{{ producto.producto.titulo }}</p>
+          <p>${{ producto.subtotal }}</p>
+        </div>
+        <br>
+        <p>{{ producto.comentarios }}</p>
+
+        <ion-list *ngIf="producto.opcionales.length > 0">
+          <ion-item *ngFor="let opcion of producto.opcionales">
+            {{ opcion.opcional.producto.titulo }} x{{ opcion.cantidad }}
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+    <!-- <div class="flexCont">
+      <p class="start">Cupón:</p>
+      <p  class="cant">N/A</p>
+    </div> -->
+    <div class="flexCont">
+      <p class="start">Extras:</p>
+      <p  class="cant">${{ extra.toFixed(2) }}</p>
+    </div>
+    <div class="flexCont" *ngIf="!pedido.ordena_y_recoje">
+      <p class="start">Shipping:</p>
+      <p  class="cant">${{pedido.sucursal.gastos_envio}}</p>
+    </div>
+    <div class="flexCont">
+      <p class="start">Subtotal:</p>
+      <p  class="cant">${{pedido.subtotal}}</p>
+    </div>
+    <div class="flexCont">
+      <p class="start">TIP:</p>
+      <p  class="cant"> ${{ pedido.productos.propina }}</p>
+    </div>
+    <div class="flexCont">
+      <p class="start">Total:</p>
+      <p  class="cant">${{pedido.total}}</p>
+    </div>
+    <hr>
+    <!-- <div class="flexCont">
+      <p class="start">Pagará con:</p>
+      <p  class="cant">$400.00</p>
+    </div> -->
+    <hr>
+    <!-- <p><strong>Dirección de envío:</strong></p>
+    <p>Calle Acequia Mayor 0000, Col. Las Acequias</p> -->
+<br>
+
+      </main>
+    </section>
+
+    
+</ion-content>

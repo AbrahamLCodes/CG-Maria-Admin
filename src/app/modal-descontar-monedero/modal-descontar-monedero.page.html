@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Información</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      
+      <label for="">Cantidad a descontar</label>
+      <input [(ngModel)]="cantidad" type="number">
+      
+      <p>
+        <strong>Saldo actual:</strong> ${{cliente.monedero.toFixed(2)}}<br>
+        <strong>Saldo despues del descuento:</strong> ${{nuevoSaldo().toFixed(2)}}<br>
+      </p>
+      
+      <br>
+
+      <button (click)="actualizarMonedero()">Descontar</button>
+      <br>
+    </main>
+  </section>
+</ion-content>

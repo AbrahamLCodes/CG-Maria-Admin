@@ -1,0 +1,947 @@
+#trashButton{
+    color: white;
+    background-color: rgb(220, 75, 75);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .section1{
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+     
+    }
+    .section1 main{
+        width: 90%;
+        height: 95%;
+        padding-top: 40px;
+        margin: auto;
+
+
+    }
+    .section1 main form{
+        width: 100%;
+        padding: 15px;
+              
+    }
+
+              //**************CSS TYPE***********************
+              .section1 main .flexCont {
+                width: 100%;
+                height: auto;
+                padding: 5px;
+                margin-bottom: 7px;
+                border-radius: 30px;
+                display:block;
+                background: rgb(233, 232, 232);
+            }
+        
+            .section1 main .flexCont .togle {
+                width: 120%;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                margin: 2%;
+            }
+
+            .section1 main .flexCont ion-toggle{
+                border-radius: 50px;
+                --background: #808080;
+                --background-checked: var(--color-secundario);
+                --handle-background: var(--color-terciario) !important;
+                --handle-background-checked: var(--color-toggle) !important;
+                -webkit-backdrop-filter: saturate(180%) blur(20px);
+                backdrop-filter: saturate(180%) blur(20px);
+            }
+        
+            .section1 main .flexCont ion-input {
+                width: 70%;
+                margin: 2%;
+                display:block;
+            }
+        
+            .section1 main .flexCont .required {
+                width: 120%;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                margin: 2%;
+            }
+        
+            .section1 main .flexCont ion-select {
+                width: 70%;
+                margin: 2%;
+                display:block;
+            }
+        
+        
+            .section1 main .flexCont2 {
+                width: 90%;
+                height: auto;
+                padding: 5px;
+                margin-left: 5%;
+                margin-bottom: 5px;
+                border-radius: 30px;
+                display:block;
+                background: rgb(233, 232, 232);
+            }
+        
+            .section1 main .flexCont2 .checkbox {
+                width: auto;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                margin: 2%;
+                display:block;
+            }
+        
+            .section1 main .flexCont2 .checkio {
+                width: auto;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                margin: 2%;
+            }
+        
+            .section1 main .flexCont2 .togle {
+                width: auto;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                margin: 2%;
+            }
+
+            .section1 main .flexCont2 ion-toggle{
+                border-radius: 50px;
+                --background: #808080;
+                --background-checked: var(--color-secundario);
+                --handle-background: var(--color-terciario) !important;
+                --handle-background-checked: var(--color-toggle) !important;
+                -webkit-backdrop-filter: saturate(180%) blur(20px);
+                backdrop-filter: saturate(180%) blur(20px);
+            }
+        
+            .section1 main .flexCont2 .selec-ion {
+                width: 50%;
+                margin: 2%;
+                display:block;
+            }
+        
+            .section1 main .flexCont2 .price {
+                width: auto;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                margin: 2%;
+                display:block;
+            }
+        
+            .section1 main .flexCont2 .pricein {
+                width: auto;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                display:block;
+                margin: 2%;
+            }
+        
+            .section1 main .flexCont2 .allow_quantity {
+                width: auto;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                margin: 2%;
+            }
+        
+            .section1 main .flexCont2 .max {
+                width: auto;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                display:block;
+                margin: 2%;
+            }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    #botonestype{
+        align-items: center;
+        width: 30%;
+        height: auto;
+        font-family: filson-soft, sans-serif;
+        font-size: 13pt;
+        border: solid 1px var(--color-diseno-outline);
+        background-color: var(--color-primario);
+        padding: 5px 50px;
+        border-radius: 50px;
+        color:var(--color-textos);
+        align-items: center;
+        // width: 30%;
+        // font-family: filson-soft, sans-serif;
+        // font-weight: 200;
+        // font-style: normal;
+        // font-size: 13pt;
+        // border: solid 1px var(--color-diseno-outline);
+        // margin: auto;
+        // min-width: inherit;
+        // background-color: var(--color-primario);
+        // -webkit-backdrop-filter: saturate(180%) blur(20px);
+        // backdrop-filter: saturate(180%) blur(20px);
+        // padding: 10px 15px;    
+        // border-radius: 50px;
+        // color:var(--color-textos);
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+    }
+   
+    .section1{
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+     
+    }
+    .section1 main{
+        width: 90%;
+        height: 95%;
+        padding-top: 110px;
+        margin: auto;
+
+
+    }
+    .section1 main form{
+        width: 100%;
+        padding: 15px;
+      
+        
+    }
+
+//**************CSS TYPE***********************
+    .section1 main .flexCont {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        margin-bottom: 7px;
+        border-radius: 30px;
+        display:block;
+        background: rgb(233, 232, 232);
+    }
+
+    .section1 main .flexCont .togle {
+        width: 120%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont ion-toggle{
+        border-radius: 50px;
+        --background: #808080;
+        --background-checked: var(--color-secundario);
+        --handle-background: var(--color-terciario) !important;
+        --handle-background-checked: var(--color-toggle) !important;
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .section1 main .flexCont ion-input {
+        width: 70%;
+        margin: 2%;
+        display:block;
+    }
+
+    .section1 main .flexCont .required {
+        width: 120%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont ion-select {
+        width: 70%;
+        margin: 2%;
+        display:block;
+    }
+
+
+    .section1 main .flexCont2 {
+        width: 90%;
+        height: auto;
+        padding: 5px;
+        margin-left: 5%;
+        margin-bottom: 5px;
+        border-radius: 30px;
+        display:block;
+        background: rgb(233, 232, 232);
+    }
+
+    .section1 main .flexCont2 .checkbox {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+        display:block;
+    }
+
+    .section1 main .flexCont2 .checkio {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 .togle {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 ion-toggle{
+        border-radius: 50px;
+        --background: #808080;
+        --background-checked: var(--color-secundario);
+        --handle-background: var(--color-terciario) !important;
+        --handle-background-checked: var(--color-toggle) !important;
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .section1 main .flexCont2 .selec-ion {
+        width: 50%;
+        margin: 2%;
+        display:block;
+    }
+
+    .section1 main .flexCont2 .price {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+        display:block;
+    }
+
+    .section1 main .flexCont2 .pricein {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        display:block;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 .allow_quantity {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 .max {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        display:block;
+        margin: 2%;
+    }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    #botonestype{
+        display: flex;
+        align-items: right;
+        width: 30%;
+        height: auto;
+        font-family: filson-soft, sans-serif;
+        font-size: 13pt;
+        border: solid 1px var(--color-diseno-outline);
+        background-color: var(--color-primario);
+        padding: 5px 50px;
+        border-radius: 50px;
+        color:var(--color-textos);
+        align-items: center;
+        // width: 30%;
+        // font-family: filson-soft, sans-serif;
+        // font-weight: 200;
+        // font-style: normal;
+        // font-size: 13pt;
+        // border: solid 1px var(--color-diseno-outline);
+        // margin: auto;
+        // min-width: inherit;
+        // background-color: var(--color-primario);
+        // -webkit-backdrop-filter: saturate(180%) blur(20px);
+        // backdrop-filter: saturate(180%) blur(20px);
+        // padding: 10px 15px;    
+        // border-radius: 50px;
+        // color:var(--color-textos);
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+    }
+
+    .section1{
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+     
+    }
+    .section1 main{
+        width: 90%;
+        height: 95%;
+        padding-top: 30px;
+        margin: auto;
+
+
+    }
+    .section1 main form{
+        width: 100%;
+        padding: 15px;
+    }
+
+//**************CSS TYPE***********************
+    .section1 main .flexCont {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        margin-bottom: 7px;
+        border-radius: 30px;
+        display:block;
+        background: rgb(233, 232, 232);
+    }
+
+    .section1 main .flexCont .togle {
+        width: 110%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .section1 main .flexCont ion-toggle{
+        border-radius: 50px;
+        --background: #808080;
+        --background-checked: var(--color-secundario);
+        --handle-background: var(--color-terciario) !important;
+        --handle-background-checked: var(--color-toggle) !important;
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .section1 main .flexCont ion-input {
+        width: 70%;
+        display:block;
+    }
+
+    .section1 main .flexCont .required {
+        width: 110%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .section1 main .flexCont ion-select {
+        width: 70%;
+        display:block;
+    }
+
+
+    .section1 main .flexCont2 {
+        width: 90%;
+        height: auto;
+        padding: 5px;
+        margin-left: 5%;
+        margin-bottom: 5px;
+        border-radius: 30px;
+        display:block;
+        background: rgb(233, 232, 232);
+    }
+
+    .section1 main .flexCont2 .checkbox {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+        display:block;
+    }
+
+    .section1 main .flexCont2 .checkio {
+        width: auto;
+        display: inline-flex;
+        margin: 2%;
+        margin-left: 25%;
+    }
+
+    .section1 main .flexCont2 .togle {
+        width: auto;
+        display: inline-flex;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 ion-toggle{
+        border-radius: 50px;
+        --background: #808080;
+        --background-checked: var(--color-secundario);
+        --handle-background: var(--color-terciario) !important;
+        --handle-background-checked: var(--color-toggle) !important;
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .section1 main .flexCont2 .selec-ion {
+        width: auto;
+        margin: 2%;
+        justify-content: center;
+        align-items: center;
+        display:block;
+    }
+
+    .section1 main .flexCont2 .price {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+        display:block;
+    }
+
+    .section1 main .flexCont2 .pricein {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        display:block;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 .allow_quantity {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 .max {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        display:block;
+        margin: 2%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+//**************CSS TYPE***********************
+    .section1 main .flexCont {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        margin-bottom: 7px;
+        border-radius: 30px;
+        display:block;
+        background: rgb(233, 232, 232);
+    }
+
+    .section1 main .flexCont .togle {
+        width: 110%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .section1 main .flexCont ion-toggle{
+        border-radius: 50px;
+        --background: #808080;
+        --background-checked: var(--color-secundario);
+        --handle-background: var(--color-terciario) !important;
+        --handle-background-checked: var(--color-toggle) !important;
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .section1 main .flexCont ion-input {
+        width: 70%;
+        display:block;
+    }
+
+    .section1 main .flexCont .required {
+        width: 110%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .section1 main .flexCont ion-select {
+        width: 70%;
+        display:block;
+    }
+
+
+    .section1 main .flexCont2 {
+        width: 90%;
+        height: auto;
+        padding: 5px;
+        margin-left: 5%;
+        margin-bottom: 5px;
+        border-radius: 30px;
+        display:block;
+        background: rgb(233, 232, 232);
+    }
+
+    .section1 main .flexCont2 .checkbox {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+        display:block;
+    }
+
+    .section1 main .flexCont2 .checkio {
+        width: auto;
+        display: inline-flex;
+        margin: 2%;
+        margin-left: 15%;
+    }
+
+    .section1 main .flexCont2 .togle {
+        width: auto;
+        display: inline-flex;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 ion-toggle{
+        border-radius: 50px;
+        --background: #808080;
+        --background-checked: var(--color-secundario);
+        --handle-background: var(--color-terciario) !important;
+        --handle-background-checked: var(--color-toggle) !important;
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .section1 main .flexCont2 .selec-ion {
+        width: 90%;
+        margin: 2%;
+        justify-content: center;
+        align-items: center;
+        display:block;
+    }
+
+    .section1 main .flexCont2 .price {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+        display:block;
+    }
+
+    .section1 main .flexCont2 .pricein {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        display:block;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 .allow_quantity {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 .max {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        display:block;
+        margin: 2%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    //**************CSS TYPE***********************
+    .section1 main .flexCont {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        margin-bottom: 7px;
+        border-radius: 30px;
+        display:block;
+        background: rgb(233, 232, 232);
+    }
+
+    .section1 main .flexCont .togle {
+        width: 110%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .section1 main .flexCont ion-toggle{
+        border-radius: 50px;
+        --background: #808080;
+        --background-checked: var(--color-secundario);
+        --handle-background: var(--color-terciario) !important;
+        --handle-background-checked: var(--color-toggle) !important;
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .section1 main .flexCont ion-input {
+        width: 70%;
+        display:block;
+    }
+
+    .section1 main .flexCont .required {
+        width: 110%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .section1 main .flexCont ion-select {
+        width: 70%;
+        display:block;
+    }
+
+
+    .section1 main .flexCont2 {
+        width: 90%;
+        height: auto;
+        padding: 5px;
+        margin-left: 5%;
+        margin-bottom: 5px;
+        border-radius: 30px;
+        display:block;
+        background: rgb(233, 232, 232);
+    }
+
+    .section1 main .flexCont2 .checkbox {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+        display:block;
+    }
+
+    .section1 main .flexCont2 .checkio {
+        width: auto;
+        display: inline-flex;
+        margin: 2%;
+        margin-left: 20%;
+    }
+
+    .section1 main .flexCont2 .togle {
+        width: auto;
+        display: inline-flex;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 ion-toggle{
+        border-radius: 50px;
+        --background: #808080;
+        --background-checked: var(--color-secundario);
+        --handle-background: var(--color-terciario) !important;
+        --handle-background-checked: var(--color-toggle) !important;
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .section1 main .flexCont2 .selec-ion {
+        width: 90%;
+        margin: 2%;
+        justify-content: center;
+        align-items: center;
+        display:block;
+    }
+
+    .section1 main .flexCont2 .price {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+        display:block;
+    }
+
+    .section1 main .flexCont2 .pricein {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        display:block;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 .allow_quantity {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 .max {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        display:block;
+        margin: 2%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1400px and up) */
+@media only screen and (min-width: 1400px) {
+    //**************CSS TYPE***********************
+    .section1 main .flexCont {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        margin-bottom: 7px;
+        border-radius: 30px;
+        display:block;
+        background: rgb(233, 232, 232);
+    }
+
+    .section1 main .flexCont .togle {
+        width: 110%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .section1 main .flexCont ion-toggle{
+        border-radius: 50px;
+        --background: #808080;
+        --background-checked: var(--color-secundario);
+        --handle-background: var(--color-terciario) !important;
+        --handle-background-checked: var(--color-toggle) !important;
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .section1 main .flexCont ion-input {
+        width: 70%;
+        display:block;
+    }
+
+    .section1 main .flexCont .required {
+        width: 110%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .section1 main .flexCont ion-select {
+        width: 70%;
+        display:block;
+    }
+
+
+    .section1 main .flexCont2 {
+        width: 90%;
+        height: auto;
+        padding: 5px;
+        margin-left: 5%;
+        margin-bottom: 5px;
+        border-radius: 30px;
+        background: rgb(233, 232, 232);
+    }
+
+    .section1 main .flexCont2 .checkbox {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 .checkio {
+        width: auto;
+        display: flex;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 .togle {
+        width: auto;
+        display: flex;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 ion-toggle{
+        border-radius: 50px;
+        --background: #808080;
+        --background-checked: var(--color-secundario);
+        --handle-background: var(--color-terciario) !important;
+        --handle-background-checked: var(--color-toggle) !important;
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);     
+    }
+
+    .section1 main .flexCont2 .selec-ion {
+        width: auto;
+        margin: 2%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section1 main .flexCont2 .price {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 .pricein {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .section1 main .flexCont2 .allow_quantity {
+        width: 30%;
+        display: flex;
+        margin: 2%;
+    }
+
+    .section1 main .flexCont2 .max {
+        width: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+}

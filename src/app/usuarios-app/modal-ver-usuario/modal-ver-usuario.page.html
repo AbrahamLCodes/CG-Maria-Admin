@@ -1,0 +1,53 @@
+<ion-header *ngIf="usuario" [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>{{ usuario.username }}</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="usuario" class="modalBack">
+  <section class="section1">
+    <main>
+      <p><b>Correo electrónico</b>: {{ usuario.email }}</p>
+      <ion-item lines="none" style="margin: 2% 0%;">
+        <ion-label><b>Estado</b></ion-label>
+        <ion-badge slot="end">{{ usuario.blocked ?  'Bloqueado' : 'Activo' }}</ion-badge>
+      </ion-item>
+      <ion-item lines="none" style="margin: 2% 0%;">
+        <ion-label><b>Tipo de usuario</b></ion-label>
+        <ion-badge slot="end">{{ tipoUsuario }}</ion-badge>
+      </ion-item>
+      <ion-item lines="none" style="margin: 2% 0%;">
+        <ion-label><b>Preferencia de pago</b></ion-label>
+        <ion-badge slot="end">{{ paymentMethod }}</ion-badge>
+      </ion-item>
+      <ion-item lines="none" style="margin: 2% 0%;">
+        <ion-label><b>Cumpleaños</b></ion-label>
+        <ion-badge slot="end">{{ usuario.nacimiento }}</ion-badge>
+      </ion-item>
+
+      <ion-item lines="none" style="margin: 2% 0%;">
+        <ion-label><b>News</b></ion-label>
+        <ion-badge slot="end">{{ usuario.nuevos_platillos ? 'Si' : 'No' }}</ion-badge>
+      </ion-item>
+
+      <ion-item lines="none" style="margin: 2% 0%;">
+        <ion-label><b>Promos</b></ion-label>
+        <ion-badge slot="end">{{ usuario.recibir_promociones ? 'Si' : 'No' }}</ion-badge>
+      </ion-item>
+
+      <ion-item lines="none" style="margin: 2% 0%;">
+        <ion-label><b>Noticias de temporada</b></ion-label>
+        <ion-badge slot="end">{{ usuario.recibir_platillos_temporada ? 'Si' : 'No' }}</ion-badge>
+      </ion-item>
+
+      <ion-item lines="none" style="margin: 2% 0%;">
+        <ion-label><b>Promociones de cumpleaños</b></ion-label>
+        <ion-badge slot="end">{{ usuario.recibir_promociones_cumple ? 'Si' : 'No' }}</ion-badge>
+      </ion-item>
+      <br>
+    </main>
+  </section>
+</ion-content>

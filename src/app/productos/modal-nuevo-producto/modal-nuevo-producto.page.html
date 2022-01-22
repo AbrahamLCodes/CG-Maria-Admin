@@ -1,0 +1,193 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Crea nuevo</h5>
+      <button style="font-size: 15pt; padding: 1% 4%; margin-right: 2%;">Guardar</button>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+    <section class="section1">
+      <main>
+       <h5>Crea un nuevo producto en tu sucursal seleccionada</h5>
+        <br>
+
+       <div class="flexCont">
+        <button class="btnMod" (click)="modalSlideTo(0);" #modalSlide0 style="background-color: --color-primario;">Detalles</button>
+        <button class="btnMod" (click)="modalSlideTo(2);" #modalSlide2>Opciones</button>
+      </div>
+      <br>
+    <ion-slides pager="false" #modalSlider1 [options]="slideOpts1" (ionSlideDidChange)="modalSlideSwipe()">
+   <!-- Detalles -->
+<ion-slide>
+  <form action="">
+
+    <div class="flexCont" style="margin: 10px 0px;">
+      <a href="https://www.iloveimg.com/es/recortar-imagen" target="_blank" style="text-decoration: underline;">Recortar imagen</a>
+    </div>
+          <!-- in app.component.html -->
+<ngx-dropzone class="dropzone init" (change)="onSelect($event)">
+<ngx-dropzone-label>Cargar imagen del producto(max 1Mb) <br> 500px X 500px </ngx-dropzone-label>
+<ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+<ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+</ngx-dropzone-preview>
+</ngx-dropzone>
+
+<br>
+     <label for="">Titulo</label>
+    <input type="text">
+
+    <label for="">Descripción</label>
+    <textarea name="" id="" cols="30" rows="10" style="border-radius: 10px;"></textarea>
+
+    <label for="">Precio</label>
+    <input type="number">
+
+    <label for="">Descuento %</label>
+    <input type="number" value="0">
+    <label for="">Stock</label>
+    <input type="number" value="1">
+    <label for="">Precio de envio</label>
+    <input type="number" >
+<p><small>Puedes activar o desactivar la personalización del producuto,
+si se desactiva el cliente no podrá especificar lo que desea quitarle al producto.</small></p>
+    <ion-list color="none">
+      <ion-item class="itemIon" lines="none">
+        <label for="">Personalización</label>
+       <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      </ion-list>
+
+    <ion-list color="none">
+      <ion-item class="itemIon" lines="none">
+        <label for="">Exclusivo venta en linea</label>
+       <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      </ion-list>
+      <hr>
+
+      <ion-item lines="none" color="black" class="select">
+        <ion-label>Disponibilidan en:</ion-label>
+        <ion-select placeholder="Sucursal">
+          <ion-select-option value="f">Sucursal 1</ion-select-option>
+          <ion-select-option value="m">Sucursal 2</ion-select-option>
+          <ion-select-option value="d">Sucursal 3</ion-select-option>
+          <ion-select-option value="k">Sucursal 4</ion-select-option>
+        </ion-select>
+      </ion-item> 
+      <hr>
+    <p><small>Marcar cómo:</small></p>
+    <ion-list color="none">
+      <ion-item class="itemIon" lines="none">
+        <label for="">Popular</label>
+       <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item class="itemIon" lines="none" lines="none">
+       <label for="">Nuevo</label>
+       <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item class="itemIon" lines="none" lines="none">
+        <label for="">Picante</label>
+        <ion-checkbox slot="end"></ion-checkbox>
+       </ion-item>
+      </ion-list>
+      <hr>
+
+    
+
+   </form>
+
+</ion-slide>
+<!-- Detalles -->
+  <!-- Opciones -->
+  <ion-slide>
+ <form action="">
+   <p>Opciones del artículo</p>
+   <hr>
+   <ion-item class="itemIon" lines="none" lines="none">
+    <label for="">Cantidad permitidos gratis</label>
+
+    <label for="" slot="end"><input  type="number"></label>
+    
+   </ion-item>
+   <hr>
+   <label for="">Nombre</label>
+     <input type="text">
+     <ion-item class="itemIon" lines="none" lines="none">
+      <label for="">Precio</label>
+      <ion-checkbox slot="end"></ion-checkbox>
+     </ion-item>
+     <label for="">Precio</label>
+     <input type="number">
+     <ion-item class="itemIon" lines="none" lines="none">
+      <label for="">Obligatorio</label>
+      <ion-checkbox slot="end"></ion-checkbox>
+     </ion-item>
+
+     <ion-item class="itemIon" lines="none">
+       <label for="">Permitir <br> gratis</label>
+      <ion-checkbox slot="end"></ion-checkbox>
+     </ion-item>
+     
+     <p><small>Habilitar si deseas permitir seleccionar mas cantidad de una misma opción.</small></p>
+     <ion-item class="itemIon" lines="none">
+       <label for="">Permitir <br> cantidad</label>
+      <ion-checkbox slot="end"></ion-checkbox>
+     </ion-item>
+    
+  <br>
+  <button>Añadir opción</button>
+  <hr>
+  <ion-list color="none">
+      <ion-item class="itemIon" lines="true">
+       
+        <label for="">
+          <input type="text" style="width: 50%; margin: 0% 1%;" value="Opcion 1">
+          <input type="number" style="width: 35%; margin: 0% 1%;" value="10.00">
+        </label>
+        <button slot="end" style="width: auto; min-width: inherit;">
+          <ion-icon  name="trash-outline"></ion-icon>
+        </button>
+      </ion-item>
+     
+  
+   
+      <ion-item class="itemIon" lines="true">
+      
+        <label for="">
+          <input type="text" style="width: 50%; margin: 0% 1%;" value="Opcion 1">
+          <input type="number" style="width: 35%; margin: 0% 1%;" value="10.00">
+        </label>
+        <button slot="end" style="width: auto; min-width: inherit;">
+          <ion-icon  name="trash-outline"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item class="itemIon" lines="true">
+        <
+        <label for="">
+          <input type="text" style="width: 50%; margin: 0% 1%;" value="Opcion 1">
+          <input type="number" style="width: 35%; margin: 0% 1%;" value="10.00">
+        </label>
+        <button slot="end" style="width: auto; min-width: inherit;">
+          <ion-icon  name="trash-outline"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+ </form>
+  
+  </ion-slide>
+  <!-- Opciones -->
+</ion-slides>
+  
+
+
+
+
+    
+      </main>
+    </section>
+
+    
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Cargar carta</h5>
+      <button (click)="cerrarModal()">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      <p>Carga la carta de tu restaurante seleccionado en PDF</p>
+      <form action="">
+
+        <div class="flexCont" style="margin: 10px 0px; text-align: center;">
+          <a href="#" target="_blank" style="text-decoration: underline; margin: 10px;">Ver carta actal</a>
+          <a href="#" target="_blank" style="text-decoration: underline; margin: 10px;">Descargar QR</a>
+          <a href="https://smallpdf.com/es/convertidor-pdf" target="_blank"
+            style=" margin: 10px; text-decoration: underline;">Creador PDF</a>
+        </div>
+        <!-- in app.component.html -->
+        <ngx-dropzone class="dropzone init" (change)="onSelect($event)">
+          <ngx-dropzone-label>Cargar un PDF</ngx-dropzone-label>
+          <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+          </ngx-dropzone-preview>
+        </ngx-dropzone>
+
+        <br>
+
+        <div class="flexCont">
+          <button>Cargar</button>
+        </div>
+
+      </form>
+    </main>
+  </section>
+
+
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-content>
+  <section class="section1">
+    <main>
+      <img src="../../assets/img/AdminApp.png" alt="">
+      <form [formGroup]="loginForm">
+        <p>Correo electrónico</p>
+        <input formControlName="email" type="email" >
+
+        <p>Contraseña</p>
+        <input formControlName="password" type="password" >
+        
+        <button (click)="login()">Ingresar</button>
+      </form>
+    </main>
+  </section>
+</ion-content>

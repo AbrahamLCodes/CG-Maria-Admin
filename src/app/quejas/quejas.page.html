@@ -1,0 +1,54 @@
+<ion-content>
+  <section class="section1">
+    <main>
+      <div class="head">
+        <h4>Quejas y<br>
+          Sugerencias</h4>
+      </div>
+
+      <hr>
+      
+      <ion-slides pager="false" #slider [options]="slideOpts">
+        <ion-slide>
+          
+          <ion-list>
+
+            <ion-item lines="none" color="black" class="select">
+              <ion-label>Filtrar por:</ion-label>
+              <ion-select [(ngModel)]="selector1" (ionChange)="filtrarQuejasSelector1($event)" placeholder="Asunto">
+                <ion-select-option value="TODO">Todo</ion-select-option>
+                <ion-select-option value="PETICION">Peticion</ion-select-option>
+                <ion-select-option value="QUEJA">Queja</ion-select-option>
+                <ion-select-option value="RECLAMO">Reclamo</ion-select-option>
+                <ion-select-option value="SUGERENCIA">Sugerencia</ion-select-option>
+              </ion-select>
+            </ion-item>
+            
+            <ion-item lines="none" color="black" class="select">
+              <ion-label>Filtrar por:</ion-label>
+              <ion-select [(ngModel)]="selector2" (ionChange)="filtrarQuejasSelector2($event)" placeholder="Motivo">
+                <ion-select-option value="TODO">Todo</ion-select-option>
+                <ion-select-option value="ATENCION">Atención</ion-select-option>
+                <ion-select-option value="CALIDAD">Calidad del producto</ion-select-option>
+                <ion-select-option value="TIEMPO">Tiempo de entrega</ion-select-option>
+                <ion-select-option value="INSTALACIONES">Instalaciones</ion-select-option>
+                <ion-select-option value="OTRO">Otro</ion-select-option>
+              </ion-select>
+            </ion-item>
+          
+          </ion-list>
+
+          <hr>
+
+          <div class="productos">
+            <div *ngFor="let queja of quejasFiltradas" class="flexOpciones">
+              <p>{{ queja.usuario.username }}</p>
+              <button (click)="verQueja(queja)" style="background-color: --color-primario;">{{ queja.visto ? 'Volver a ver' : 'Ver' }}</button>
+            </div>
+          </div>
+        </ion-slide>
+
+      </ion-slides>
+    </main>
+  </section>
+</ion-content>

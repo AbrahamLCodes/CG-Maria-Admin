@@ -1,0 +1,25 @@
+<ion-header [translucent]="true" mode="ios" >
+  <ion-toolbar  mode="ios">
+    <ion-buttons slot="secondary"  *ngIf="['/','/dashboard'].indexOf(this.router.url) == -1" (click)="backClicked()">
+      <ion-button>
+        <ion-icon name="arrow-back-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <button slot="primary" class="cambio" *ngIf="['/cobrar'].indexOf(this.router.url) !== -1" > USD 18.50</button>
+    <button slot="primary" class="corte" *ngIf="['/cobrar'].indexOf(this.router.url) !== -1" (click)="modal('devolucion')">  Devolución (f9)</button>
+    <button slot="primary" class="corte" *ngIf="['/cobrar'].indexOf(this.router.url) !== -1" (click)="modal('corte')">  Corte (f10)</button>
+    <!-- <ion-buttons slot="primary" *ngIf="['/','/cobrar'].indexOf(this.router.url) == -1">
+      <ion-button color="medium" (click)="notes();">
+        ClikyNotes
+        <ion-icon slot="icon-only" name="document" ></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+ </ion-header>
+
+ <!-- <section class="clikyNotes init">
+   <button class="close"><ion-icon name="chevron-forward"></ion-icon></button>
+   <main>
+<button>Agregar nota</button>
+   </main>
+ </section> -->

@@ -1,0 +1,39 @@
+<ion-content>
+  <section class="section1">
+    <main>
+      <div class="head">
+        <h4>
+          Sucursales<br>Restaurante</h4>
+      </div>
+      <hr>
+      <ion-list>
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Filtrar por:</ion-label>
+          <ion-select placeholder="Seleccionar">
+            <ion-select-option value="f">Más ventas</ion-select-option>
+            <ion-select-option value="f">Nuevas</ion-select-option>
+            <ion-select-option value="m">Antiguas</ion-select-option>
+          </ion-select>
+        </ion-item>    
+      </ion-list>
+
+      <div class="flexOpciones">
+        <button class="itemTablet btnTablet" (click)="modal('nuevo')" >Crear nueva sucursal</button>
+      </div>
+
+      <hr>
+      <div class="productos">
+        <div class="flexOpciones" *ngFor="let sucursal of sucursales">
+          <p>{{ sucursal.nombre }}</p>
+          <div class=" flexTablet">
+            <ion-toggle checked></ion-toggle>
+            <button class="itemTablet"  (click)="alertBorrarSucursal(sucursal)" >Borrar</button>
+            <button class="itemTablet"  (click)="editarSucursal(sucursal.id)" >Editar</button>
+            <button class="itemTablet"  (click)="verSucursal(sucursal.id)" style="background-color: --color-primario;">Ver</button>
+          </div>
+          <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+        </div> 
+      </div>
+    </main>
+  </section>
+</ion-content>

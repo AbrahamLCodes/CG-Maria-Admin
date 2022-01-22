@@ -1,0 +1,50 @@
+<ion-content>
+  <section class="section1">
+    <main>
+      <div class="head">   
+        <h4>Usuarios<br>consumidor</h4>
+      </div>
+     
+      <hr>
+
+      <ion-slides pager="false" #slider [options]="slideOpts" >
+        <ion-slide>
+          
+          <input [(ngModel)]="buscador" type="text" class="select" placeholder="Buscar...">
+          
+          <div class="flexOpciones">
+            <p>Opciones</p>
+            <div class="flexCont flexTablet">
+              <button class="itemTablet btnTablet" (click)="modal('nuevo')">Cargar nuevo</button>
+            </div>
+            <button class="btnPop" (click)="opcionesRes($event,'opcionesUsuarios')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+          </div>
+          
+          <hr>
+
+          <div class="productos">
+            <div class="flexOpciones">
+              <p><b>Usuarios</b></p>
+              <div class=" flexTablet">
+                <p style="margin: 5px"><b>Bloqueados</b></p>
+                <p style="margin: 5px"><b>Acciones</b></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="productos">
+            <div *ngFor="let usuario of usuariosApp | filter: buscador ; index as index" class="flexOpciones">
+              <p>{{ usuario.username }}</p>
+              <div class=" flexTablet">
+                <ion-toggle (click)="bloquearUsuario(usuario, index)" [(ngModel)]="usuariosApp[index].blocked" checked></ion-toggle>
+                <button class="itemTablet"  (click)="ver(usuario)" style="background-color: --color-primario;">Ver</button>
+              </div>
+              <button class="btnPop" (click)="opcionesRes($event,'opcionesItem')" #slide1><ion-icon name="ellipsis-vertical"></ion-icon></button>
+            </div>
+          </div>
+
+        </ion-slide>
+      </ion-slides>
+    </main>
+  </section>
+</ion-content>

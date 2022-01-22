@@ -1,0 +1,158 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Crea un cupón</h5>
+      
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      <form action="" [formGroup]="formCupon">
+        
+        <div class="flexCont" style="margin: 10px 0px;">
+          <a href="https://www.iloveimg.com/es/recortar-imagen" target="_blank" style="text-decoration: underline;">Recortar imagen</a>
+        </div>
+          
+        <ngx-dropzone [multiple]="false" class="dropzone init" (change)="onSelect($event)">
+          <ngx-dropzone-label>Cargar imagen del producto(max 2mb) <br> 500px X 500px </ngx-dropzone-label>
+          <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
+            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+          </ngx-dropzone-image-preview>
+        </ngx-dropzone>
+
+        <hr>
+        <p>Titulo del cupón</p>
+        <p><small>Máximo 60 Caracteres</small></p>
+        <input formControlName="titulo" type="text" placeholder="INVIERNO 2021">
+
+        <label for="">Lineamientos para redimir cupón</label>
+        <textarea formControlName="lineamientos" style="border-radius: 10px;" name="" id="" cols="30" rows="10"></textarea>
+
+        <label for="">Fecha de inicio</label>
+        <input formControlName="fechaInicio" type="date">
+
+        <label for="">Fecha de expiración</label>
+        <input formControlName="fechaExpiracion" type="date">
+
+        <label for="">Cantidad de usos por usuario</label>
+        <input formControlName="cantUsos" type="number">
+
+        <label for="">Minimo de compra</label>
+        <input type="number">
+
+        <ion-list color="none">
+          <ion-item class="itemIon" lines="none">
+            <label for="">Porcentaje</label>
+            <ion-checkbox formControlName="porcentaje" slot="end" ></ion-checkbox>
+          </ion-item>
+
+          <input type="number">
+          <ion-item class="itemIon" lines="none">
+            <label for="">Cantidad</label>
+          <ion-checkbox formControlName="cantidad" slot="end" ></ion-checkbox>
+          </ion-item>
+
+          <input type="number">
+          <ion-item class="itemIon" lines="none">
+            <label for="">Producto</label>
+          <ion-checkbox formControlName="producto" slot="end" ></ion-checkbox>
+          </ion-item>
+
+          <p><small>Si eliges esta opción podrás hacer valido
+            por el o los productos que selecciones.</small></p>
+        </ion-list>
+
+        <hr>
+        <p>En la compra de:</p>
+        <div class="flexCont" style=" margin: 20px 0px; flex-wrap: wrap; width: 100%; max-height: 15vh; overflow: auto;">
+          <ion-item lines="none" class="itemUserAgre">
+            <ion-label>Producto</ion-label>
+            <ion-badge slot="end"><ion-icon name="close"></ion-icon></ion-badge>
+          </ion-item>      
+        </div>
+
+        <input type="search" placeholder="Buscar por nombre">
+    
+        <ion-list  class="listSearchUser">
+          <ion-item lines="none">
+            <ion-label>Producto</ion-label>
+            <button slot="end"><ion-icon name="add"></ion-icon></button>
+          </ion-item>
+        </ion-list>
+
+        <hr>
+
+       
+
+        <div class="flexCont" style=" margin: 20px 0px; flex-wrap: wrap; width: 100%; max-height: 15vh; overflow: auto;">
+          <ion-item lines="none" class="itemUserAgre">
+            <ion-label>Producto</ion-label>
+            <ion-badge slot="end"><ion-icon name="close"></ion-icon></ion-badge>
+          </ion-item>      
+        </div>
+
+        <input type="search" placeholder="Buscar por nombre">
+    
+        <ion-list  class="listSearchUser">
+          <ion-item lines="none">
+            <ion-label>Producto</ion-label>
+            <button slot="end"><ion-icon name="add"></ion-icon></button>
+          </ion-item>
+        </ion-list>
+
+        <hr>
+        <p>Solo redimible en </p>
+
+        <ion-list color="none">
+          <ion-item class="itemIon" lines="none">
+            <label for="">Todas las plataformas disponibles</label>
+            <ion-checkbox formControlName="allPlatform" slot="end" ></ion-checkbox>
+          </ion-item>
+
+          <ion-item class="itemIon" lines="none">
+            <label for="">Android</label>
+            <ion-checkbox formControlName="androidPlatform" slot="end" ></ion-checkbox>
+          </ion-item>
+
+          <ion-item class="itemIon" lines="none">
+            <label for="">IOS</label>
+            <ion-checkbox formControlName="iosPlatform" slot="end" ></ion-checkbox>
+          </ion-item>
+
+          <ion-item class="itemIon" lines="none">
+            <label for="">PWA / Escritorio y Laptop</label>
+            <ion-checkbox formControlName="pwaPlatform" slot="end" ></ion-checkbox>
+          </ion-item>
+
+          <ion-item class="itemIon" lines="none">
+            <label for="">Sucursal</label>
+            <ion-checkbox formControlName="sucursalPlatform" slot="end" ></ion-checkbox>
+          </ion-item>
+
+        </ion-list>
+
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Asignar a:</ion-label>
+          <ion-select placeholder="Sucursal" multiple="true">
+            <ion-select-option value="f">Sucursal 1</ion-select-option>
+          </ion-select>
+        </ion-item> 
+
+        <ion-item class="itemIon" lines="none">
+          <label for="">Crear QR, Código de barras y NIP secreto</label>
+          <ion-checkbox slot="end" ></ion-checkbox>
+        </ion-item>
+
+        <ion-item class="itemIon" lines="none">
+          <label for="">Repetir todos los años en las mismas fechas</label>
+          <ion-checkbox slot="end" ></ion-checkbox>
+        </ion-item>
+        <button (click)="submitCupon()">Registrar</button>
+      </form>
+    </main>
+  </section>
+</ion-content>

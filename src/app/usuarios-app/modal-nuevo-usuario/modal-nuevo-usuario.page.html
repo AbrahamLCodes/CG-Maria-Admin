@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Añadir nuevo usuario</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+    <section class="section1">
+      <main>
+
+        <form [formGroup]="usuarioForm" (ngSubmit)="submitUsuario()">
+          <br>
+
+          <label>Nombre completo</label>
+          <input formControlName="username" type="text">
+
+          <label>Correo electrónico</label>
+          <input formControlName="email" type="text">
+
+          <label>Contraseña</label>
+          <input formControlName="password" type="password">
+
+          <label>¿Confirmar contraseña</label>
+          <input formControlName="confirmPassword" type="password">
+
+          <label>Monedero inicial</label>
+          <input formControlName="monedero" type="number" value="0">
+          
+          <button>Guardar</button>
+         </form>
+      </main>
+    </section>
+</ion-content>

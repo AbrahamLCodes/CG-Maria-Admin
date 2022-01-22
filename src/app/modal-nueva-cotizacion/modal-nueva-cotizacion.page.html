@@ -1,0 +1,144 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Crea nueva cotización</h5>
+      <button style="font-size: 15pt; padding: 1% 4%; margin-right: 2%;" (click)="cerrarModal()">Guardar</button>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+    <section class="section1">
+      <main>
+       <h5>Crea una nueva cotizacion en el cliente seleccionado</h5>
+        <br>
+
+       <div class="flexCont">
+        <button class="btnMod" (click)="modalSlideTo(0);" #modalSlide0 style="background-color: --color-primario;">Detalles</button>
+        <button class="btnMod" (click)="modalSlideTo(2);" #modalSlide2>Servicios</button>
+      </div>
+      <br>
+    <ion-slides pager="false" #modalSlider1 [options]="slideOpts1">
+   <!-- Detalles -->
+<ion-slide>
+  <form action="">
+     <label for="">Nombre de la cotización</label>
+    <input type="text" value="Dulce Aguirre">
+
+    <ion-item lines="none" color="black" class="select">
+      <ion-label>Evento:</ion-label>
+      <ion-select placeholder="Seleccionar">
+        <ion-select-option value="f">Boda</ion-select-option>
+        <ion-select-option value="m">XV</ion-select-option>
+      </ion-select>
+    </ion-item> 
+    <ion-item class="itemIon" lines="none">
+      <label for="">Usar datos de contacto existentes</label>
+     <ion-checkbox slot="end" checked></ion-checkbox>
+    </ion-item>
+
+
+
+    <label for="">Fecha del evento</label>
+    <input type="date">
+
+    <label for="">Invitados</label>
+    <input type="nummber" value="300">
+
+    <label for="">Lugar del evento</label>
+    <input type="text" value="Cibeles Cd. Juárez Chih. MX">
+
+    <label for="">Notas</label>
+    <textarea style="border-radius: 10px;" name="" id="" cols="30" rows="10"></textarea>
+   
+   </form>
+
+</ion-slide>
+<!-- Detalles -->
+  <!-- Opciones -->
+  <ion-slide>
+ <form action="">
+   <p>Agregar servicios a la cotización</p>
+   <div class="flexCont" style=" margin: 20px 0px; flex-wrap: wrap; width: 100%; max-height: 15vh; overflow: auto;">
+    <ion-item lines="none" class="itemServicio">
+      <p slot="start"> <strong>$4,500.00</strong> / Mesas de Bienvenida para recepción a cotizar</p>
+      <button slot="end"><ion-icon name="close"></ion-icon></button>
+    </ion-item>
+
+    <ion-item lines="none" class="itemServicio">
+      <p  slot="start"> <strong>$4,500.00</strong> / Boda temática</p>
+      <button slot="end"><ion-icon name="close"></ion-icon></button>
+    </ion-item>
+
+    <ion-item lines="none" class="itemServicio">
+      <p slot="start"> <strong>$4,500.00</strong> / Mesas de Bienvenida para recepción a cotizar</p>
+      <button slot="end"><ion-icon name="close"></ion-icon></button>
+    </ion-item>
+
+    <ion-item lines="none" class="itemServicio">
+      <p  slot="start"> <strong>$4,500.00</strong> / Boda temática</p>
+      <button slot="end"><ion-icon name="close"></ion-icon></button>
+    </ion-item>
+
+    <ion-item lines="none" class="itemServicio">
+      <p slot="start"> <strong>$4,500.00</strong> / Mesas de Bienvenida para recepción a cotizar</p>
+      <button slot="end"><ion-icon name="close"></ion-icon></button>
+    </ion-item>
+
+   
+
+    
+  </div>
+  <input type="search" placeholder="Buscar servicio">
+  
+  <ion-list  class="listItemServicio">
+
+    <ion-item lines="none" class="itemServicio">
+      <p slot="start"> <strong>$4,500.00</strong> / Mesas de Bienvenida para recepción a cotizar</p>
+      <button slot="end"><ion-icon name="add"></ion-icon></button>
+    </ion-item>
+
+    <ion-item lines="none" class="itemServicio">
+      <p slot="start"> <strong>$1,500.00</strong> / Mesas de Bienvenida para recepción a cotizar</p>
+      <button slot="end"><ion-icon name="add"></ion-icon></button>
+    </ion-item>
+
+    <ion-item lines="none" class="itemServicio">
+      <p slot="start"> <strong>$6,500.00</strong> / Mesas de Bienvenida para recepción a cotizar</p>
+      <button slot="end"><ion-icon name="add"></ion-icon></button>
+    </ion-item>
+
+    <ion-item lines="none" class="itemServicio">
+      <p slot="start"><strong>$8,500.00</strong> / Mesas de Bienvenida para recepción a cotizar</p>
+      <button slot="end"><ion-icon name="add"></ion-icon></button>
+    </ion-item>
+  
+
+  </ion-list>
+  <hr>
+  <button style="width: 100%;">Previsualizar cotización</button>
+
+
+  <ion-item class="itemIon" lines="none">
+    <label for="">Agendar al finalizar cotización</label>
+   <ion-checkbox slot="end" checked></ion-checkbox>
+  </ion-item>
+ 
+  
+ </form>
+  
+  </ion-slide>
+  <!-- Opciones -->
+</ion-slides>
+  
+
+
+
+
+    
+      </main>
+    </section>
+
+    
+</ion-content>

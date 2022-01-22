@@ -1,0 +1,98 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Crear nuevo complemento</h5>
+      
+      <button ><ion-icon name="close-outline" (click)="cerrarModal()"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      <button id="botonestype" (click)="addOption()">Agregar opci&oacute;n</button>
+      <button id="trashButton" (click)="eraseOptions()" [style.backgroundColor]="disabledButtonColor" [disabled]="disabledButton"><i class="fas fa-trash"></i></button>
+      <form [formGroup]="complementoForm">
+        <div class="flexCont">
+
+          <div class="togle">
+            <ion-toggle id="iontog" formControlName="predeterminado"></ion-toggle>
+            <p style="margin: 3px;">Estado</p>
+
+            <div>
+              <ion-input formControlName="title" placeholder="Ingrese el t&iacute;tulo"></ion-input>
+            </div>
+
+          </div>
+            
+          <div class="required">
+            <ion-checkbox formControlName="required" (click)="mostrarSelect"></ion-checkbox>
+            <p style="margin: 7px;">Requerido</p>
+
+            <div>
+              <ion-input type="number" formControlName="max_quantity"></ion-input>
+            </div>
+          </div>
+   
+        </div>
+
+      <div class="flexCont2" *ngFor="let opcion of opciones ; let index = index">
+        <div class="checkbox">
+          <div class="checkio">
+            <p>Seleccionar</p>
+            <ion-checkbox [value]="opciones.select" (ionChange)="onSelectActive($event, index)"></ion-checkbox>
+          </div>
+          
+          <div class="togle">
+            <p>Estado</p>
+            <ion-toggle [checked]="opciones.default"  (ionChange)="onSelectActiveStatus($event, index)"></ion-toggle>
+          </div>
+
+          <div class="selec-ion">
+            <ion-item>
+              <ion-select placeholder="Nombre de la opci&oacute;n" (ionChange)="onSelect($event, index)">
+                <ion-select-option *ngFor="let producto of productos" [value]="producto">{{producto.titulo}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </div>
+          
+        </div>
+
+        <div class="price">
+          <div class="pricein">
+            <ion-input type="number" [value]="opcion.price" placeholder="Precio" (keyup)="onKeyUpPrice($event, index)"></ion-input>
+          </div>
+
+          <div class="allow_quantity">
+            <ion-checkbox [checked]="opcion.allow_quantity" #allowQuantity (ionChange)="onChangeBox($event, index)"></ion-checkbox>
+            <p>¿Permitir cantidad?</p>
+          </div>
+
+          <div class="max" *ngIf="opcion.allow_quantity == true">
+            <ion-input type="number"  [value]="opcion.max" placeholder="Maximo" (keyup)="onKeyUpQuantity($event, index)"></ion-input>
+          </div>
+
+        </div>
+      </div>
+        <!-- <br>
+        <label for="">Title</label>
+        <input formControlName="titulo" type="text">
+      
+        <label for="">Price</label>
+        <input formControlName="precio" type="number">
+
+        <hr>
+        <ion-item lines="none" color="black" class="select">
+          <ion-label>Availability in:</ion-label>
+          <ion-select formControlName="sucursales" placeholder="Elige una sucursal" multiple="true">
+            <ion-select-option *ngFor="let sucursal of sucursales" value="{{sucursal.id}}">{{sucursal.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item> 
+        <hr>
+        <button (click)="submitComplemento()">Save</button> -->
+      </form>
+        <button id="botonestype" (click)="submitComplemento()">Guardar</button>
+    </main>
+  </section>
+</ion-content>

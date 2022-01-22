@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Información</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      <p><strong>Detalles</strong></p>
+
+      <p>
+        <strong>Identificador:</strong> {{ promocion.identificador }}<br>
+        <strong>Promocionar por rango de fecha:</strong> {{ promocion.esPorFechas ? 'Sí' : 'No' }}<br>
+        <strong>Fecha Inicio:</strong> {{ promocion.fechaInicial }}<br>
+        <strong>Fecha de expiracion:</strong> {{ promocion.fechaFinal }} <br>
+      </p>
+      
+      <br>
+      
+      <br>
+    </main>
+  </section>
+</ion-content>

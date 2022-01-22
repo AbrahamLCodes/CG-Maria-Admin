@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="main">
+      <h5>Información</h5>
+      <button (click)="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+     </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modalBack">
+  <section class="section1">
+    <main>
+      <p>Detalles de sucursal</p>
+      <div class="flexCont">
+        <img [src]="imageToShow" alt="imagen de la sucursal" width="40%" alt="">
+      </div>
+
+      <p>
+        <strong>Nombre de sucursal:</strong> {{sucursal.nombre}} <br>
+        <strong>Dirección:</strong> {{sucursal.direccion}} <br>
+        <strong>Precio mínimo de pedido</strong> {{sucursal.precio_minimo}} <br>
+      </p>
+      <br>
+      <!-- <p>Area de operación</p>
+      <div class="mapAreas">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3394.94320657833!2d-106.42000203452159!3d31.69012049591039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75c35779277d9%3A0x2a8611b76297dad3!2sLas%20Acequias%2C%20Cd%20Ju%C3%A1rez%2C%20Chih.!5e0!3m2!1ses-419!2smx!4v1623722689872!5m2!1ses-419!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div> -->
+      <hr>
+      <p>
+        <strong>Configuración de entrega</strong><br>
+        <strong>Tipo de entrega:</strong>  {{tipoEntrega}}<br>
+        <strong>Tipo de cargo entrega:</strong>  {{sucursal.tipo_cargo === 'DINAMICO' ? 'Dinámico' : 'Fijo'}} <br>
+        <strong>Gastos de envio:</strong> {{sucursal.gastos_envio}} <br>
+        <strong>IVA:</strong> {{sucursal.iva * 100}} <br>
+        <strong>Porcentaje de comisión:</strong> {{sucursal.porcentaje_comision}}%<br>
+        <strong>Métodos de pago:</strong> {{tipoPagoString}}<br>
+      </p>
+
+      <br>
+      <div class="flexCont">
+        <button (click)="goTo('editar')">Editar información</button>
+      </div>
+      <br>
+    </main>
+  </section>
+</ion-content>
